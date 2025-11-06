@@ -5,7 +5,9 @@
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Fonts first to reduce FOUT -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Main stylesheet -->
@@ -44,5 +46,31 @@
     <main class="page">
       {{ content }}
     </main>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const glow = document.createElement("div");
+      glow.className = "cursor-glow";
+      document.body.appendChild(glow);
+
+      let x = 0, y = 0;
+      let targetX = 0, targetY = 0;
+      const speed = 0.15; // trail smoothness
+
+      document.addEventListener("mousemove", (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+      });
+
+      function animate() {
+        x += (targetX - x) * speed;
+        y += (targetY - y) * speed;
+        glow.style.transform = `translate(${x - 12}px, ${y - 12}px)`;
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    });
+    </script>
   </body>
 </html>

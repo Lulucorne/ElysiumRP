@@ -25,11 +25,19 @@
 /* Base canvas */
 html,
 body {
-  background: radial-gradient(1200px 600px at 50% -10%, rgba(181, 40, 210, 0.08), transparent 60%),
-    var(--bg-900);
-  color: var(--text-100);
   margin: 0;
   padding: 0;
+
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(181, 40, 210, 0.08), transparent 60%),
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('/ElysiumRP/assets/BackgroundERP.gif');
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: var(--text-100);
 }
 
 /* Basic type rhythm */
@@ -40,6 +48,15 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   line-height: 1.6;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(1px);
+  z-index: -1; /* stays behind everything */
 }
 
 a {
@@ -71,6 +88,11 @@ a:hover {
   align-items: center;
   gap: 12px;
 }
+.brand-name {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
 .brand-logo {
   width: 42px;
   height: 42px;
@@ -83,12 +105,17 @@ h2,
 h3 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-top: 0.8em;
+  margin-top: 0.6em;
   margin-bottom: 0.4em;
   line-height: 1.25;
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
   letter-spacing: 0.05em;
+}
+
+.section > h2:first-child,
+.section > h3:first-child {
+  margin-top: 0;
 }
 
 h1 {
@@ -201,10 +228,15 @@ strong {
   color: var(--muted-400);
   margin-top: 6px;
 }
+.hero .title,
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+}
 
 /* Generic content section */
 .section {
-  background: var(--bg-800);
+  background: rgba(17, 16, 24, 0.92);
+  backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-xl);
   padding: 16px 18px;
@@ -244,17 +276,33 @@ strong {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .button:hover,
   .btn:hover,
   .card:hover {
     transform: none;
+  }
+}
+
+@media (max-width: 900px) {
+  html,
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    background: radial-gradient(1200px 600px at 50% -10%, rgba(181, 40, 210, 0.08), transparent 60%),
+      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+      url('/ElysiumRP/assets/BackgroundERP_static.jpg');
+    background-position: center top, center top, center center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 1600px auto, cover, cover;
+    background-attachment: scroll, scroll, scroll;
   }
 }
 
@@ -417,4 +465,72 @@ strong {
   color: #ffd84d; /* yellow highlight for the tag */
   font-weight: 700;
   font-size: 0.95em;
+}
+
+/* === Custom Animated Cursors === */
+
+/* Default arrow cursor (animated .ani with PNG fallback) */
+html,
+body {
+  cursor: url("{{ '/assets/cursors/ely_cursor.ani' | relative_url }}") 0 0,
+    url("{{ '/assets/cursors/ely_cursor.png' | relative_url }}") 0 0, auto;
+}
+
+/* Pointer cursor for links and buttons */
+a,
+button,
+[role='button'],
+.btn,
+.button {
+  cursor: url("{{ '/assets/cursors/ely_pointer.cur' | relative_url }}"),
+    url("{{ '/assets/cursors/ely_pointer.png' | relative_url }}") 0 0, pointer;
+}
+
+/* Reduced motion users get static PNGs only */
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    cursor: url("{{ '/assets/cursors/ely_cursor.png' | relative_url }}") 0 0, auto;
+  }
+
+  a,
+  button,
+  [role='button'],
+  .btn,
+  .button {
+    cursor: url("{{ '/assets/cursors/ely_pointer.png' | relative_url }}") 0 0, pointer;
+  }
+}
+
+/* === Cursor Glow Trail === */
+@keyframes pulseGlow {
+  0%,
+  100% {
+    background: radial-gradient(circle, var(--acid-400), transparent 70%);
+  }
+  50% {
+    background: radial-gradient(circle, var(--violet-500), transparent 70%);
+  }
+}
+
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  background: radial-gradient(circle, var(--acid-400), transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0.45;
+  transition: transform 0.05s linear;
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-glow {
+    display: none;
+  }
 }
