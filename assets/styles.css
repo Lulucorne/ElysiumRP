@@ -536,8 +536,7 @@ strong {
 /* Cursors */
 html,
 body {
-  cursor: url('/ElysiumRP/assets/cursors/ely_cursor.ani') 6 2,
-    url('/ElysiumRP/assets/cursors/ely_cursor.png') 6 2, auto;
+  cursor: url('/ElysiumRP/assets/cursors/ely_cursor.png') 6 2, auto;
 }
 
 a,
@@ -546,14 +545,5 @@ button,
 .nav a,
 [role='button'],
 input[type='submit'] {
-  cursor: url('/ElysiumRP/assets/cursors/ely_pointer.cur') 8 2,
-    url('/ElysiumRP/assets/cursors/ely_pointer.png') 8 2, pointer;
-}
-
-/* Reduced motion: static PNG only */
-@media (prefers-reduced-motion: reduce) {
-  html,
-  body {
-    cursor: url('/ElysiumRP/assets/cursors/ely_cursor.png') 6 2, auto;
-  }
+  cursor: url('/ElysiumRP/assets/cursors/ely_pointer.png') 8 2, pointer;
 }

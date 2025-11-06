@@ -19,86 +19,86 @@ const songs = [
   {
     title: 'Theme of Laura',
     artist: 'Akira Yamaoka',
-    src: 'assets/characters/Irene-Li/music/Theme Of Laura.mp3',
-    cover: 'assets/characters/Irene-Li/music/cover/ThemeOfLaura.jpeg',
+    src: 'assets/characters/irene-li/music/Theme Of Laura.mp3',
+    cover: 'assets/characters/irene-li/music/cover/ThemeOfLaura.jpeg',
   },
   {
     title: 'Promise (Reprise)',
     artist: 'Akira Yamaoka',
-    src: 'assets/characters/Irene-Li/music/Silent Hill 2 OST - Promise (Reprise).mp3',
-    cover: 'assets/characters/Irene-Li/music/cover/ThemeOfLaura.jpeg',
+    src: 'assets/characters/irene-li/music/Silent Hill 2 OST - Promise (Reprise).mp3',
+    cover: 'assets/characters/irene-li/music/cover/ThemeOfLaura.jpeg',
   },
   {
     title: 'A Stranger',
     artist: 'A Perfect Circle',
-    src: 'assets/characters/Irene-Li/music/A Stranger.mp3',
-    cover: 'assets/characters/Irene-Li/music/cover/AStranger.jpeg',
+    src: 'assets/characters/irene-li/music/A Stranger.mp3',
+    cover: 'assets/characters/irene-li/music/cover/AStranger.jpeg',
   },
   {
     title: 'Flying to You',
     artist: 'Ilaria Graziano',
-    src: "assets/characters/Irene-Li/music/Wolf's Rain - Flying to You, Blue.mp3",
-    cover: 'assets/characters/Irene-Li/music/cover/WolfRainOST2.png',
+    src: "assets/characters/irene-li/music/Wolf's Rain - Flying to You, Blue.mp3",
+    cover: 'assets/characters/irene-li/music/cover/WolfRainOST2.png',
   },
   {
     title: 'Valse de la Lune',
     artist: 'Ilaria Graziano',
-    src: "assets/characters/Irene-Li/music/Wolf's Rain - Valse De La Lune.mp3",
-    cover: 'assets/characters/Irene-Li/music/cover/WolfRainOST1.jpeg',
+    src: "assets/characters/irene-li/music/Wolf's Rain - Valse De La Lune.mp3",
+    cover: 'assets/characters/irene-li/music/cover/WolfRainOST1.jpeg',
   },
   {
     title: 'Dogs and Angels',
     artist: 'Joyce',
-    src: "assets/characters/Irene-Li/music/Wolf's Rain - Dogs and Angels.mp3",
-    cover: 'assets/characters/Irene-Li/music/cover/WolfRainOST1.jpeg',
+    src: "assets/characters/irene-li/music/Wolf's Rain - Dogs and Angels.mp3",
+    cover: 'assets/characters/irene-li/music/cover/WolfRainOST1.jpeg',
   },
   {
     title: 'CORAÇÃO SELVAGEM',
     artist: 'Joyce',
-    src: "assets/characters/Irene-Li/music/Wolf's Rain - Coracao Selvagem.mp3",
-    cover: 'assets/characters/Irene-Li/music/cover/WolfRainOST1.jpeg',
+    src: "assets/characters/irene-li/music/Wolf's Rain - Coracao Selvagem.mp3",
+    cover: 'assets/characters/irene-li/music/cover/WolfRainOST1.jpeg',
   },
   {
     title: 'Cloud 9',
     artist: 'Maaya Sakamoto',
-    src: "assets/characters/Irene-Li/music/Wolf's Rain - Cloud 9.mp3",
-    cover: 'assets/characters/Irene-Li/music/cover/WolfRainOST2.png',
+    src: "assets/characters/irene-li/music/Wolf's Rain - Cloud 9.mp3",
+    cover: 'assets/characters/irene-li/music/cover/WolfRainOST2.png',
   },
   {
     title: 'Tell Me What the Rain Knows',
     artist: 'Maaya Sakamoto',
-    src: "assets/characters/Irene-Li/music/Wolf's Rain - Tell Me What the Rain Knows.mp3",
-    cover: 'assets/characters/Irene-Li/music/cover/WolfRainOST2.png',
+    src: "assets/characters/irene-li/music/Wolf's Rain - Tell Me What the Rain Knows.mp3",
+    cover: 'assets/characters/irene-li/music/cover/WolfRainOST2.png',
   },
   {
     title: 'Requiem',
     artist: 'Yoko Kanno',
-    src: "assets/characters/Irene-Li/music/Wolf's Rain - Requiem.mp3",
-    cover: 'assets/characters/Irene-Li/music/cover/WolfRainOST1.jpeg',
+    src: "assets/characters/irene-li/music/Wolf's Rain - Requiem.mp3",
+    cover: 'assets/characters/irene-li/music/cover/WolfRainOST1.jpeg',
   },
   {
     title: 'Leaving on Red Hill',
     artist: 'Yoko Kanno',
-    src: "assets/characters/Irene-Li/music/Wolf's Rain - Leaving on Red Hill.mp3",
-    cover: 'assets/characters/Irene-Li/music/cover/WolfRainOST1.jpeg',
+    src: "assets/characters/irene-li/music/Wolf's Rain - Leaving on Red Hill.mp3",
+    cover: 'assets/characters/irene-li/music/cover/WolfRainOST1.jpeg',
   },
   {
     title: 'Paradiso',
     artist: 'Yoko Kanno',
-    src: "assets/characters/Irene-Li/music/Wolf's Rain - Paradiso.mp3",
-    cover: 'assets/characters/Irene-Li/music/cover/WolfRainOST1.jpeg',
+    src: "assets/characters/irene-li/music/Wolf's Rain - Paradiso.mp3",
+    cover: 'assets/characters/irene-li/music/cover/WolfRainOST1.jpeg',
   },
   {
     title: "Heaven's Not Enough",
     artist: 'Steve Conte',
-    src: "assets/characters/Irene-Li/music/Wolf's Rain OST - Heaven's Not Enough.mp3",
-    cover: 'assets/characters/Irene-Li/music/cover/WolfRainOST2.png',
+    src: "assets/characters/irene-li/music/Wolf's Rain OST - Heaven's Not Enough.mp3",
+    cover: 'assets/characters/irene-li/music/cover/WolfRainOST2.png',
   },
   {
     title: "I Know I'm a Wolf",
     artist: 'Young Heretics',
-    src: "assets/characters/Irene-Li/music/I Know I'm a Wolf - Young Heretics.mp3",
-    cover: 'assets/characters/Irene-Li/music/cover/YoungHeretics.jpeg',
+    src: "assets/characters/irene-li/music/I Know I'm a Wolf - Young Heretics.mp3",
+    cover: 'assets/characters/irene-li/music/cover/YoungHeretics.jpeg',
   },
 ];
 
@@ -124,8 +124,8 @@ volumeSlider.value = audio.volume;
 function playTrack(index) {
   currentIndex = index;
   const song = songs[index];
-  const srcPath = song.src.replace(/^assets\/characters\/Irene-Li\//, '');
-  const coverPath = song.cover.replace(/^assets\/characters\/Irene-Li\//, '');
+  const srcPath = song.src.replace(/^assets\/characters\/irene-li\//, '');
+  const coverPath = song.cover.replace(/^assets\/characters\/irene-li\//, '');
   audio.src = `${BASE}/${srcPath}`;
   coverArt.src = `${BASE}/${coverPath}`;
   trackInfo.textContent = `❤︎ ${song.title} – ${song.artist} ❤︎`;
