@@ -1,0 +1,113 @@
+:root {
+  --bg: #0f0f12;
+  --panel: #15151a;
+  --text: #f7f7f8;
+  --muted: #b7b7c2;
+  --accent: #ff3b1a;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, Segoe UI, Roboto, Inter, Arial, sans-serif;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.brand {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.brand-logo {
+  height: 56px;
+  width: auto;
+}
+
+.grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.card-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.card-body {
+  padding: 14px;
+}
+.card-title {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+}
+.card-summary {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.character {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.hero {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.portrait {
+  width: 220px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid #222;
+}
+.summary {
+  color: var(--muted);
+}
+.bio {
+  padding-top: 8px;
+}
+.back {
+  margin-top: 28px;
+}
+.back a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.back a:hover {
+  text-decoration: underline;
+}

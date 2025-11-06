@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ page.name }} • {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="{{ site.baseurl }}/">
+        <img src="{{ site.baseurl }}/assets/logo.png" alt="Project Logo" />
+      </a>
+    </header>
+
+    <main class="character">
+      <div class="hero">
+        {% if page.portrait %}
+        <img class="portrait" src="{{ site.baseurl }}{{ page.portrait }}" alt="{{ page.name }}" />
+        {% endif %}
+        <div>
+          <h1>{{ page.name }}</h1>
+          {% if page.summary %}
+          <p class="summary">{{ page.summary }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <article class="bio">{{ content }}</article>
+
+      <p class="back"><a href="{{ site.baseurl }}/">← Back to characters</a></p>
+    </main>
+  </body>
+</html>

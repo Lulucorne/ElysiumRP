@@ -1,0 +1,37 @@
+---
+layout: nil
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <img class="brand-logo" src="{{ site.baseurl }}/assets/logo.png" alt="Project Logo" />
+        <h1>{{ site.title }}</h1>
+      </div>
+    </header>
+
+    <main class="grid">
+      {% assign chars = site.characters | sort: "name" %} {% for c in chars %}
+      <a class="card" href="{{ site.baseurl }}{{ c.url }}" title="{{ c.name }}">
+        {% if c.portrait %}
+        <img class="card-img" src="{{ site.baseurl }}{{ c.portrait }}" alt="{{ c.name }}" />
+        {% endif %}
+        <div class="card-body">
+          <h2 class="card-title">{{ c.name }}</h2>
+          {% if c.summary %}
+          <p class="card-summary">{{ c.summary }}</p>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </main>
+  </body>
+</html>
