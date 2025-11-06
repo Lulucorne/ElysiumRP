@@ -1,11 +1,11 @@
 title: Elysium RP
-url: https://lulucorne.github.io/ElysiumRP/
-baseurl: ''
+url: https://lulucorne.github.io
+baseurl: '/ElysiumRP'
 
 collections:
   characters:
     output: true
-    permalink: ElysiumRP/characters/:name/
+    permalink: /characters/:name/
 
 defaults:
   - scope:

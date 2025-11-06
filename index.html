@@ -32,7 +32,7 @@ layout: nil
         {% assign chars = site.characters | sort: "name" %} {% for c in chars %}
         <a
           class="card"
-          href="{{ site.baseurl }}{{ c.url }}"
+          href="{{ site.baseurl }}{{ c.redirect_to | default: c.url }}"
           title="{{ c.name }}"
           data-name="{{ c.name | downcase }}"
         >
