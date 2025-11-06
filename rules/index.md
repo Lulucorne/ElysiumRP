@@ -49,7 +49,7 @@ title: Rules
 
   <p><strong>[2.5] Erotic Roleplay [ERP] is prohibited on any Elysium medium.</strong> ERP constitutes any roleplay that is sexually explicit or intentionally pressing the boundary. Characters are allowed to engage in romantic relationships and discuss sexual topics, but all sexually explicit material must be engaged elsewhere.</p>
 
-<p><strong>[2.6] Characters may be Permanently Killed [PKed] and PKed characters may not be revived.</strong> Players may choose to PK their own characters at any time, at their discretion. Additionally, certain situations may result in forced PKs at staff discretion. These include, but are not necessarily limited to:</p>
+  <p><strong>[2.6] Characters may be Permanently Killed [PKed] and PKed characters may not be revived.</strong> Players may choose to PK their own characters at any time, at their discretion. Additionally, certain situations may result in forced PKs at staff discretion. These include, but are not necessarily limited to:</p>
 
   <ul>
     <li>Dying from a zombie infection (NOT dying to zombies).</li>
@@ -57,7 +57,7 @@ title: Rules
     <li>Dying as the victim of a PK Request (see Hostile Interactions and PvP).</li>
   </ul>
 
-<p><strong>[2.7] No Value For Life [NVFL], or failure to behave realistically in threatening situations may constitute grounds for a forced Permanent Kill [PK].</strong> All characters are expected to value their life. Situations that might result in an NVFL PK include carelessly charging into hordes during events, disregarding obvious threats, or absolute refusal to express fear or a desire to avoid death and physical harm. Self-injury to level first aid is also grounds for an NVFL PK.</p>
+  <p><strong>[2.7] No Value For Life [NVFL], or failure to behave realistically in threatening situations may constitute grounds for a forced Permanent Kill [PK].</strong> All characters are expected to value their life. Situations that might result in an NVFL PK include carelessly charging into hordes during events, disregarding obvious threats, or absolute refusal to express fear or a desire to avoid death and physical harm. Self-injury to level first aid is also grounds for an NVFL PK.</p>
 </div>
 
 <div class="section">
