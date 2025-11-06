@@ -1,0 +1,16 @@
+title: Elysium RP
+url: https://lulucorne.github.io
+baseurl: ''
+theme: minima
+
+collections:
+  characters:
+    output: true
+    permalink: /characters/:name/
+
+defaults:
+  - scope:
+      path: ''
+      type: characters
+    values:
+      layout: character
