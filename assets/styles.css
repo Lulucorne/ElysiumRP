@@ -37,6 +37,9 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 a {
@@ -57,9 +60,11 @@ a:hover {
 
 /* Header brand strip */
 .site-header {
-  max-width: var(--page-max);
-  margin: 0 auto;
-  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 .brand {
   display: flex;
@@ -78,43 +83,45 @@ h2,
 h3 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin: 0 0 0.6em 0;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+  line-height: 1.25;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
 h1 {
   font-size: 2rem;
   color: var(--acid-500);
 }
-
 h2 {
   font-size: 1.6rem;
   color: var(--acid-400);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 4px;
-  margin-top: 1.5em;
 }
-
 h3 {
   font-size: 1.3rem;
   color: var(--violet-500);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   padding-bottom: 3px;
-  margin-top: 1.2em;
 }
 
-h1 {
-  font-size: clamp(1.6rem, 2.6vw, 2rem);
-}
-h2 {
-  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
-}
-h3 {
-  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+.section h1,
+.section h2,
+.section h3 {
+  margin-top: 0.4em;
 }
 
 ::selection {
   background: rgba(198, 208, 58, 0.25);
   color: var(--text-100);
+}
+
+strong {
+  color: var(--acid-400); /* neon yellow-green accent */
+  font-weight: 700;
 }
 
 /* Buttons */
@@ -149,7 +156,7 @@ h3 {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin: 10px 0 20px 0;
+  margin: 0;
 }
 .nav a {
   padding: 8px 12px;
@@ -203,6 +210,11 @@ h3 {
   padding: 16px 18px;
   margin: 18px 0;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.section > h2:first-child,
+.section > h3:first-child {
+  margin-top: 0;
 }
 
 /* Scrollable helper for long blocks */

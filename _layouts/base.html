@@ -4,38 +4,45 @@
     <meta charset="utf-8" />
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles.css" />
+
+    <!-- Fonts first to reduce FOUT -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="{{ site.baseurl }}/">
-        <img class="brand-logo" src="{{ site.baseurl }}/assets/logo.png" alt="Logo" />
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img class="brand-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Logo" />
         <span class="brand-name">{{ site.title }}</span>
       </a>
 
-      <!-- Mobile menu toggle -->
-      <input id="nav-toggle" type="checkbox" />
-      <label for="nav-toggle" class="nav-burger" aria-label="Menu">☰</label>
-
       <nav class="nav">
-        <a href="{{ site.baseurl }}/" class="{% if page.url == '/' %}active{% endif %}">Home</a>
-        <a
-          href="{{ site.baseurl }}/characters/"
-          class="{% if page.url == '/characters/' %}active{% endif %}"
-          >Characters</a
-        >
-        <a href="{{ site.baseurl }}/rules/" class="{% if page.url == '/rules/' %}active{% endif %}"
-          >Rules</a
-        >
-        <a href="{{ site.baseurl }}/lore/" class="{% if page.url == '/lore/' %}active{% endif %}"
-          >Lore</a
-        >
-        <a href="{{ site.baseurl }}/apply/" class="{% if page.url == '/apply/' %}active{% endif %}"
-          >Apply</a
-        >
+        <a href="{{ '/' | relative_url }}"
+           class="{% if page.url == '/' %}active{% endif %}"
+           {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
+
+        <a href="{{ '/characters/' | relative_url }}"
+           class="{% if page.url == '/characters/' %}active{% endif %}"
+           {% if page.url == '/characters/' %}aria-current="page"{% endif %}>Characters</a>
+
+        <a href="{{ '/rules/' | relative_url }}"
+           class="{% if page.url == '/rules/' %}active{% endif %}"
+           {% if page.url == '/rules/' %}aria-current="page"{% endif %}>Rules</a>
+
+        <a href="{{ '/lore/' | relative_url }}"
+           class="{% if page.url == '/lore/' %}active{% endif %}"
+           {% if page.url == '/lore/' %}aria-current="page"{% endif %}>Lore</a>
+
+        <a href="{{ '/apply/' | relative_url }}"
+           class="{% if page.url == '/apply/' %}active{% endif %}"
+           {% if page.url == '/apply/' %}aria-current="page"{% endif %}>Apply</a>
       </nav>
     </header>
 
-    <main class="page">{{ content }}</main>
+    <main class="page">
+      {{ content }}
+    </main>
   </body>
 </html>
