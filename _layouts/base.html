@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ site.baseurl }}/">
+        <img class="brand-logo" src="{{ site.baseurl }}/assets/logo.png" alt="Logo" />
+        <span class="brand-name">{{ site.title }}</span>
+      </a>
+
+      <!-- Mobile menu toggle -->
+      <input id="nav-toggle" type="checkbox" />
+      <label for="nav-toggle" class="nav-burger" aria-label="Menu">☰</label>
+
+      <nav class="nav">
+        <a href="{{ site.baseurl }}/" class="{% if page.url == '/' %}active{% endif %}">Home</a>
+        <a
+          href="{{ site.baseurl }}/characters/"
+          class="{% if page.url == '/characters/' %}active{% endif %}"
+          >Characters</a
+        >
+        <a href="{{ site.baseurl }}/rules/" class="{% if page.url == '/rules/' %}active{% endif %}"
+          >Rules</a
+        >
+        <a href="{{ site.baseurl }}/lore/" class="{% if page.url == '/lore/' %}active{% endif %}"
+          >Lore</a
+        >
+        <a href="{{ site.baseurl }}/apply/" class="{% if page.url == '/apply/' %}active{% endif %}"
+          >Apply</a
+        >
+      </nav>
+    </header>
+
+    <main class="page">{{ content }}</main>
+  </body>
+</html>
