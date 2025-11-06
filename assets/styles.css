@@ -226,10 +226,10 @@ strong {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: linear-gradient(
       145deg,
-      rgba(138, 34, 194, 0.18),
+      rgba(138, 34, 194, 0.35),
       /* violet glow */ rgba(198, 208, 58, 0.05) /* subtle yellow-green depth */
     ),
-    rgba(17, 16, 24, 0.45); /* base translucent layer */
+    rgba(17, 16, 24, 0.8); /* base translucent layer */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35), inset 0 0 25px rgba(138, 34, 194, 0.08);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -265,8 +265,8 @@ strong {
 .section {
   background: linear-gradient(
     135deg,
-    rgba(138, 34, 194, 0.12),
-    /* soft violet glow top-left */ rgba(17, 16, 24, 0.48) /* deep neutral bottom-right */
+    rgba(138, 34, 194, 0.35),
+    /* soft violet glow top-left */ rgba(17, 16, 24, 0.8) /* deep neutral bottom-right */
   );
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-xl);

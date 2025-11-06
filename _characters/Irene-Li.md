@@ -1,7 +1,7 @@
 ---
 name: Irene Li
-portrait: /assets/characters/Irene-Li/portrait/Irene-Li-Portrait.gif
-summary: Paradise Bound
+title: Irene Li
+summary: Paradise-bound
+portrait: /assets/characters/Irene-Li/portrait/Irene-Li-Portait.gif
+custom_url: /characters/irene-li/
 ---
-
-BLABLA BLA

@@ -13,15 +13,16 @@ title: Characters
 
 <!-- Card grid -->
 <section class="grid" id="cards">
-  {% assign chars = site.characters | sort: "name" %} {% for c in chars %}
+  {% assign chars = site.characters | sort: "name" %} {% for c in chars %} {% assign href =
+  c.custom_url | default: c.redirect_to | default: c.url %}
   <a
     class="card"
-    href="{{ site.baseurl }}{{ c.redirect_to | default: c.url }}"
+    href="{{ href | relative_url }}"
     title="{{ c.name }}"
     data-name="{{ c.name | downcase }}"
   >
     {% if c.portrait %}
-    <img class="card-img" src="{{ site.baseurl }}{{ c.portrait }}" alt="{{ c.name }}" />
+    <img class="card-img" src="{{ c.portrait | relative_url }}" alt="{{ c.name }}" />
     {% endif %}
     <div class="card-body">
       <h2 class="card-title">{{ c.name }}</h2>
