@@ -12,21 +12,112 @@
   --acid-500: #c6d03a; /* neon yellow-green */
   --acid-400: #d8e24d;
 
-  /* Accents */
+  /* Accents and tokens */
   --accent: var(--acid-500);
   --accent-2: var(--violet-500);
   --radius-xl: 18px;
   --ring: 1px solid rgba(255, 255, 255, 0.08);
+
+  /* Layout max width */
+  --page-max: 1080px;
 }
 
+/* Base canvas */
 html,
 body {
   background: radial-gradient(1200px 600px at 50% -10%, rgba(181, 40, 210, 0.08), transparent 60%),
     var(--bg-900);
   color: var(--text-100);
+  margin: 0;
+  padding: 0;
 }
 
-/* Buttons that fit the theme */
+/* Basic type rhythm */
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  color: #e6f173;
+  text-decoration: underline;
+}
+
+/* Page wrapper if you use one */
+.page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Header brand strip */
+.site-header {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 0.6em 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--acid-500);
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: var(--acid-400);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 4px;
+  margin-top: 1.5em;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: var(--violet-500);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding-bottom: 3px;
+  margin-top: 1.2em;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+}
+h2 {
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+}
+h3 {
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+}
+
+::selection {
+  background: rgba(198, 208, 58, 0.25);
+  color: var(--text-100);
+}
+
+/* Buttons */
 .button,
 .btn {
   display: inline-block;
@@ -37,21 +128,178 @@ body {
   background: linear-gradient(180deg, var(--acid-400), var(--acid-500));
   box-shadow: 0 6px 18px rgba(198, 208, 58, 0.25);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
+  border: 0;
+  cursor: pointer;
 }
 .button:hover,
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 24px rgba(198, 208, 58, 0.28);
 }
+.button:focus,
+.btn:focus,
+.nav a:focus,
+#search:focus {
+  outline: 2px solid rgba(198, 208, 58, 0.65);
+  outline-offset: 2px;
+}
 
-/* Nav highlight tweak to match palette */
+/* Top nav */
+.nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 20px 0;
+}
+.nav a {
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-100);
+  text-decoration: none;
+}
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
 .nav a.active {
   outline: 1px solid rgba(198, 208, 58, 0.45);
   background: rgba(138, 34, 194, 0.15);
 }
 
-/* ---------- Apply page embed styles ---------- */
+/* Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-xl);
+  margin: 18px 0;
+  background: radial-gradient(900px 380px at 85% 0%, rgba(138, 34, 194, 0.16), transparent 60%),
+    radial-gradient(700px 280px at 0% 20%, rgba(198, 208, 58, 0.14), transparent 55%), var(--bg-800);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Note: Liquid does not render inside .css files on GH Pages. Use a hard path for project sites. */
+  background: url('/ElysiumRP/assets/logo.png') center/220px no-repeat;
+  opacity: 0.05;
+  filter: blur(0.5px);
+}
+.hero-inner {
+  padding: 28px 20px;
+}
+.hero .subtitle {
+  color: var(--muted-400);
+  margin-top: 6px;
+}
 
+/* Generic content section */
+.section {
+  background: var(--bg-800);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-xl);
+  padding: 16px 18px;
+  margin: 18px 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Scrollable helper for long blocks */
+.scrollable {
+  max-height: 600px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* Lists inside sections */
+.section ul {
+  margin: 10px 0 0 1.2rem;
+  padding: 0;
+}
+.section li {
+  margin: 6px 0;
+}
+
+/* Characters grid on Home */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button:hover,
+  .btn:hover,
+  .card:hover {
+    transform: none;
+  }
+}
+
+.card {
+  display: block;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.12s ease, transform 0.12s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(138, 34, 194, 0.28);
+}
+.card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  background: #0f0f14;
+}
+.card-body {
+  padding: 12px 12px 16px 12px;
+}
+.card-title {
+  margin: 0 0 6px 0;
+  font-size: 1.1rem;
+}
+.card-summary {
+  margin: 0;
+  color: var(--muted-400);
+  font-size: 0.95rem;
+}
+
+/* Search field */
+#search {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin: 8px 0 18px 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-100);
+  outline: none;
+}
+#search::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+#search:focus {
+  border-color: rgba(198, 208, 58, 0.45);
+  box-shadow: 0 0 0 3px rgba(198, 208, 58, 0.15);
+}
+
+/* Apply page embed */
 .form-wrap {
   max-width: 980px;
   margin: 24px auto;
@@ -61,52 +309,100 @@ body {
     radial-gradient(600px 200px at 10% 10%, rgba(198, 208, 58, 0.1), transparent 50%), var(--bg-800);
   border: var(--ring);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  position: relative; /* allows a neat neon ring overlay */
 }
-
 .form-title {
   margin: 0 0 10px 0;
   font-size: 1.6rem;
   letter-spacing: 0.5px;
 }
-
 .form-note {
   margin: 0 0 16px 0;
   color: var(--muted-400);
 }
-
-/* The iframe itself cannot be styled inside, but we can frame it nicely */
+/* The iframe itself cannot be styled inside */
 .form-frame {
   width: 100%;
-  height: 1200px; /* adjust if your form is longer */
+  height: 1200px; /* adjust for your form length */
   border: 0;
   border-radius: 14px;
   background: #0f0f14;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
-
-/* Optional neon ring */
+/* Neon ring that hugs the embed box */
 .form-wrap::after {
   content: '';
-  display: block;
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--radius-xl) + 2px);
   pointer-events: none;
-  border-radius: calc(var(--radius-xl) + 4px);
-  position: relative;
-  top: -1202px; /* lines up with iframe height + padding, fine to omit */
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 40px rgba(198, 208, 58, 0.08);
 }
-
-/* Mobile */
 @media (max-width: 720px) {
   .form-frame {
     height: 1600px;
   }
 }
 
-a {
-  color: var(--accent);
+/* PvP examples - simple */
+.pvp-examples {
+  list-style: none;
+  margin: 16px 0;
+  padding: 0;
 }
-a:hover {
-  color: #e6f173;
+.pvp-examples li {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
-.card:hover {
-  box-shadow: 0 8px 24px rgba(138, 34, 194, 0.28);
+
+/* one class per state */
+.pvp-examples li.valid {
+  color: #b4ff6f;
+  border-left: 4px solid #8fbf4a;
+}
+.pvp-examples li.invalid {
+  color: #ff5e5e;
+  border-left: 4px solid #a83c3c;
+}
+
+/* optional flavor */
+.pvp-examples li.emote {
+  font-style: italic;
+  color: #c6aaff;
+}
+
+.pvp-examples .note {
+  display: block;
+  margin-top: 4px;
+  color: #caa5a5;
+  font-size: 0.9rem;
+}
+.pvp-examples .note.good {
+  color: #ffd84d;
+}
+
+/* inline parts for PvP example lines */
+.pvp-examples .part-demand {
+  color: #b4ff6f; /* green-ish — demand */
+  font-weight: 700;
+}
+
+.pvp-examples .part-threat {
+  color: #ff5e5e; /* red-ish — threat */
+  font-weight: 700;
+}
+
+/* make the [PVP] tag noticeable */
+.pvp-examples .pvp-tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  color: #ffd84d; /* yellow highlight for the tag */
+  font-weight: 700;
+  font-size: 0.95em;
 }

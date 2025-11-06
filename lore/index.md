@@ -3,6 +3,8 @@ layout: base
 title: Lore
 ---
 
-# Lore
+{% include hero.html title="Lore" subtitle="World background and timeline" %}
 
-World background, factions, timeline, whatever you need.
+<div class="section">
+Write your world intro here. You can use Markdown normally.
+</div>
