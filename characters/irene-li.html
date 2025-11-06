@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Data & Stylesheets -->
+    <meta charset="UTF-8" />
+    <!-- Title -->
+    <title>Irene Li</title>
+    <!-- Icon -->
+    <link
+      rel="icon"
+      href="{{ site.baseurl }}/assets/characters/Irene-Li/icon/among-us.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <!-- Any Special Fonts -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/characters/Irene-Li/font/font.css" />
+    <!-- Styles Connection -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/characters/Irene-Li/styles.css" />
+    <!-- Discord / Social preview -->
+    <meta property="og:title" content="Character Sheet - Irene Li" />
+    <meta
+      property="og:description"
+      content="You wish you could have this, you Project Zomboid nerd."
+    />
+    <meta
+      property="og:image"
+      content="{{ site.url }}{{ site.baseurl }}/assets/characters/Irene-Li/banner/Irene-Li-Banner.gif"
+    />
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/characters/irene-li.html" />
+    <meta property="og:type" content="website" />
+  </head>
+  <!-- Background & Overlays -->
+  <body data-base="{{ site.baseurl }}/assets/characters/Irene-Li">
+    <div class="background"></div>
+    <div class="overlay1"></div>
+    <div class="overlay2"></div>
+    <div class="overlay3"></div>
+
+    <!-- Starting Screen -->
+    <div id="start-overlay">
+      ♥ CLICK ANYWHERE TO START THE MUSIC ♥<br />
+      You better appreciate it.
+    </div>
+
+    <!-- Actual Page -->
+    <div class="container">
+      <h1>Paradise-bound</h1>
+      <p class="quote">"I come from nowhere. I'm headed to Paradise."</p>
+
+      <!-- Profile Photos -->
+      <div class="profile-and-music">
+        <div class="photo-column">
+          <img
+            src="{{ site.baseurl }}/assets/characters/Irene-Li/portrait/Irene-Li-Portait.gif"
+            alt="Irene Li"
+            class="profile-pic"
+          />
+          <img
+            src="{{ site.baseurl }}/assets/characters/Irene-Li/portrait/Irene-Li-Portait2.gif"
+            alt="Irene Li"
+            class="profile-pic"
+          />
+        </div>
+
+        <!-- Music Player -->
+        <div class="music-player-container">
+          <h2>Playlist</h2>
+          <div class="cover-art-container" style="text-align: center; margin-bottom: 10px">
+            <img
+              id="cover-art"
+              src="{{ site.baseurl }}/assets/characters/Irene-Li/music/cover/ThemeOfLaura.jpeg"
+              alt="Cover Art"
+            />
+            <div id="track-info"></div>
+            <div id="time-stamp">0:00 / 4:00</div>
+          </div>
+
+          <!-- Controls -->
+          <div class="music-controls">
+            <audio id="audio" autoplay></audio>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.1" />
+            <button id="mute-btn">🕪</button>
+            <button id="play-pause">▶</button>
+            <button id="shuffle-btn">⇆</button>
+          </div>
+
+          <div class="playlist scrollable" id="playlist"></div>
+        </div>
+      </div>
+
+      <!-- Friends -->
+      <div class="section">
+        <h2>Top Friends</h2>
+
+        <!-- Rat -->
+        <div class="friends">
+          <figure class="friend">
+            <img src="{{ site.baseurl }}/assets/characters/Irene-Li/friends/Rat.jpg" alt="Rat" />
+            <figcaption>Rat</figcaption>
+          </figure>
+
+          <!-- Emmett -->
+          <figure class="friend">
+            <img
+              src="{{ site.baseurl }}/assets/characters/Irene-Li/friends/Emmett.png"
+              alt="Emmett"
+            />
+            <figcaption>Emmett</figcaption>
+          </figure>
+
+          <!-- Rowan -->
+          <figure class="friend">
+            <img
+              src="{{ site.baseurl }}/assets/characters/Irene-Li/friends/Rowan.png"
+              alt="Rowan"
+            />
+            <figcaption>Rowan</figcaption>
+          </figure>
+
+          <!-- Akira -->
+          <figure class="friend">
+            <img
+              src="{{ site.baseurl }}/assets/characters/Irene-Li/friends/Akira.jpg"
+              alt="Akira"
+            />
+            <figcaption>Akira</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Character Info - OOC -->
+      <section class="character-info">
+        <h2>OOC Character Information</h2>
+        <div class="divider"></div>
+
+        <div class="char-block">
+          <h3>Basics</h3>
+          <ul>
+            <li><span>Name:</span> Irene Li</li>
+            <li><span>Nickname:</span> "Paradise-Bound" & "Rey"</li>
+            <li><span>Age:</span> 26</li>
+            <li><span>Place of Birth:</span> Kentucky</li>
+            <li><span>Nationality:</span> American</li>
+            <li><span>Ethnicity:</span> Chinese</li>
+            <li>
+              <span>Family:</span> Estranged parents; only child. Family owned a small restaurant in
+              Chinatown
+            </li>
+            <li><span>Languages:</span> English (fluent), Cantonese (native), Mandarin (native)</li>
+            <li><span>Occupation:</span> –</li>
+            <li><span>Group Affiliation:</span> STNR</li>
+          </ul>
+        </div>
+
+        <!-- Character Info - Physical Attributes -->
+        <div class="char-block">
+          <h3>Appearance & Condition</h3>
+          <ul>
+            <li><span>Height:</span> 5’4" (162 cm)</li>
+            <li>
+              <span>Build:</span> Lean, strength hidden under a drug-induced malnourished frame
+            </li>
+            <li><span>Hair:</span> Long, black, usually unkempt</li>
+            <li><span>Eyes:</span> Dark brown, sharp and restless</li>
+            <li>
+              <span>Features:</span> Left side of her face is scarred; similar scarring on arms,
+              abdomen, sternum
+            </li>
+            <li>
+              <span>Disabilities / Illnesses:</span> Chronic pain, Insomnia, PTSD-like symptoms
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- About Me -->
+      <div class="section about">
+        <h2>About Me</h2>
+        <p>
+          Fear follows me. Blood covers me.<br />
+          But there is no law anymore, no leash.<br />
+          The dead knock at the door, but I am still standing.<br />
+          I will carve my way to Paradise, even if I am the only one left to see it.
+        </p>
+      </div>
+
+      <!-- Interests -->
+      <div class="section interests">
+        <h2>Interests</h2>
+        <p>
+          <strong>Music:</strong> Anything that drowns out the groans of the dead.<br />
+          <strong>Movies:</strong> Wolf’s Rain reruns on a broken TV.<br />
+          <strong>Heroes:</strong> Nobody left alive.
+        </p>
+      </div>
+
+      <!-- Blog Posts -->
+      <div class="section post-info">
+        <div class="section scrollable">
+          <h2>Posts</h2>
+          <!-- Post #1 -->
+          <div class="post">
+            <div class="date">January 30, 2017 – 3:04 AM</div>
+            <p>Wolves are supposed to be extinct.<br />Maybe so am I.</p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>205</span></button>
+              <button class="dislike-btn">▼ Dislike <span>12</span></button>
+              <button class="comment-btn">✉︎ Comment <span>143</span></button>
+            </div>
+          </div>
+          <!-- Post #2 -->
+          <div class="post">
+            <div class="date">January 28, 2017 – 1:42 AM</div>
+            <p>
+              They say Paradise only opens when the world ends.<br />
+              The world ended. I’m still waiting.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>838</span></button>
+              <button class="dislike-btn">▼ Dislike <span>32</span></button>
+              <button class="comment-btn">✉︎ Comment <span>316</span></button>
+            </div>
+          </div>
+          <!-- Post #3 -->
+          <div class="post">
+            <div class="date">January 25, 2017 – 11:12 PM</div>
+            <p>
+              The pack always moves together.<br />
+              But I walk alone.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>561</span></button>
+              <button class="dislike-btn">▼ Dislike <span>24</span></button>
+              <button class="comment-btn">✉︎ Comment <span>218</span></button>
+            </div>
+          </div>
+          <!-- Post #4 -->
+          <div class="post">
+            <div class="date">January 24, 2017 – 6:17 AM</div>
+            <p>
+              The scent of blood carries farther than flowers.<br />
+              Maybe it still leads to Paradise.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>553</span></button>
+              <button class="dislike-btn">▼ Dislike <span>20</span></button>
+              <button class="comment-btn">✉︎ Comment <span>115</span></button>
+            </div>
+          </div>
+          <!-- Post #5 -->
+          <div class="post">
+            <div class="date">January 21, 2017 – 2:29 AM</div>
+            <p>
+              Wolves wear human skin.<br />
+              I wear blood.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>952</span></button>
+              <button class="dislike-btn">▼ Dislike <span>31</span></button>
+              <button class="comment-btn">✉︎ Comment <span>362</span></button>
+            </div>
+          </div>
+          <!-- Post #6 -->
+          <div class="post">
+            <div class="date">January 19, 2017 – 4:44 AM</div>
+            <p>
+              He was always looking forward.<br />
+              I only look back.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>496</span></button>
+              <button class="dislike-btn">▼ Dislike <span>13</span></button>
+              <button class="comment-btn">✉︎ Comment <span>203</span></button>
+            </div>
+          </div>
+          <!-- Post #7 -->
+          <div class="post">
+            <div class="date">January 18, 2017 – 10:08 PM</div>
+            <p>
+              She chased her hunger.<br />
+              I chase silence.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>778</span></button>
+              <button class="dislike-btn">▼ Dislike <span>36</span></button>
+              <button class="comment-btn">✉︎ Comment <span>114</span></button>
+            </div>
+          </div>
+          <!-- Post #8 -->
+          <div class="post">
+            <div class="date">January 16, 2017 – 12:21 AM</div>
+            <p>
+              Paradise.<br />
+              Is it a place, or just the absence of fear?
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>365</span></button>
+              <button class="dislike-btn">▼ Dislike <span>66</span></button>
+              <button class="comment-btn">✉︎ Comment <span>253</span></button>
+            </div>
+          </div>
+          <!-- Post #9 -->
+          <div class="post">
+            <div class="date">January 13, 2017 – 9:33 PM</div>
+            <p>
+              Wolves follow the Lunar Flower.<br />
+              I only follow the smell of smoke.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>606</span></button>
+              <button class="dislike-btn">▼ Dislike <span>61</span></button>
+              <button class="comment-btn">✉︎ Comment <span>355</span></button>
+            </div>
+          </div>
+          <!-- Post #10 -->
+          <div class="post">
+            <div class="date">January 11, 2017 – 1:55 AM</div>
+            <p>
+              Paradise is for wolves.<br />
+              What’s left for me?
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>318</span></button>
+              <button class="dislike-btn">▼ Dislike <span>23</span></button>
+              <button class="comment-btn">✉︎ Comment <span>264</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comment Section -->
+      <div class="section comments">
+        <h2>Comments</h2>
+        <p><em>[comment deleted]</em></p>
+        <p><em>[comment deleted]</em></p>
+        <p><em>"She was here. Covered in blood. Still smiling." – Anonymous</em></p>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">Last Login: January 31, 2017</div>
+    </div>
+
+    <!-- Script Connection -->
+    <script src="{{ site.baseurl }}/assets/characters/Irene-Li/script.js"></script>
+  </body>
+</html>

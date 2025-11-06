@@ -5,7 +5,7 @@ baseurl: ''
 collections:
   characters:
     output: true
-    permalink: /characters/:name/
+    permalink: ElysiumRP/characters/:name/
 
 defaults:
   - scope:
