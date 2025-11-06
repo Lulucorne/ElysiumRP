@@ -154,7 +154,7 @@ title: Rules
 
   <p>The submission of PK requests to further engaging roleplay storylines is very much encouraged by staff. However, due to the gravity of the request, staff do expect a substantial level of effort and detail with the submission. A sufficient-for-approval PK requests will include at least a few paragraphs of IC history.</p>
 
-  <p><strong>[4.10] Initiations with intent to PK have additional stipulations.</strong> A PK initiation has four requirements; it is a <strong>(1) <u>/yell TEXT emote</u></strong> that includes <strong>(2) a <u>clear demand</u></strong>, <strong>(3) a <u>clear threat</u></strong>, and <strong>(4) <u>ends with <span class="pvp-tag">[PVP PK]</span></u>. The demand <u>does</u> not have to be one the victim can comply with. Initiations cannot be made over VoIP, but the interaction may continue in VoIP after the initiation.</p>
+  <p><strong>[4.10] Initiations with intent to PK have additional stipulations.</strong> A PK initiation has four requirements; it is a <strong>(1) <u>/yell TEXT emote</u></strong> that includes <strong>(2) a <u>clear demand</u></strong>, <strong>(3) a <u>clear threat</u></strong>, and <strong>(4) <u>ends with <span class="pvp-tag">[PVP PK]</span></u></strong>. The demand does not have to be one the victim can comply with. Initiations cannot be made over VoIP, but the interaction may continue in VoIP after the initiation.</p>
 
   <ul>
     <li>After sending a PK initiation, the victim has PK rights against you for 1 hour.</li>
@@ -167,7 +167,7 @@ title: Rules
 
 <div class="section">
   <h3>Raiding</h3>
-  <p><strong>[4.12] Initiations with intent to Raid have additional stipulations.</strong> A Raid initiation has four requirements; it is a <strong>(1) <u>/yell TEXT emote</u></strong> that includes <strong>(2) a <u>clear demand</u></strong>, <strong>(3) a <u>clear threat</u></strong>, and <strong>(4) <u>ends with <span class="pvp-tag">[PVP RAID]</span></u>. Raiders may begin breach of the base security immediately, but may not attack any residents who comply with demands.</p>
+  <p><strong>[4.12] Initiations with intent to Raid have additional stipulations.</strong> A Raid initiation has four requirements; it is a <strong>(1) <u>/yell TEXT emote</u></strong> that includes <strong>(2) a <u>clear demand</u></strong>, <strong>(3) a <u>clear threat</u></strong>, and <strong>(4) <u>ends with <span class="pvp-tag">[PVP RAID]</span></u></strong>. Raiders may begin breach of the base security immediately, but may not attack any residents who comply with demands.</p>
 
   <p><strong>[4.13] PvP Raid initiations are valid for every player that can see the emoted initiation regardless of faction.</strong> Only players present at the moment when the PvP is dropped may participate in the PvP without a separate PvP initiation.</p>
 
