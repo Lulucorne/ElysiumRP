@@ -1,6 +1,6 @@
 :root {
   --bg: #0f0f12;
-  --panel: #15151a;
+  --panel: #17171d;
   --text: #f7f7f8;
   --muted: #b7b7c2;
   --accent: #ff3b1a;
@@ -34,11 +34,27 @@ body {
   height: 56px;
   width: auto;
 }
+.logo img {
+  height: 40px;
+}
 
-.grid {
+.page {
   max-width: 1100px;
   margin: 0 auto;
   padding: 24px;
+}
+#search {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #2a2a30;
+  background: #121217;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 18px;
@@ -87,6 +103,7 @@ body {
   gap: 20px;
   align-items: center;
   margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 .portrait {
   width: 220px;

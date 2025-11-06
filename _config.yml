@@ -1,7 +1,6 @@
 title: Elysium RP
-url: https://lulucorne.github.io
+url: https://lulucorne.github.io/ElysiumRP/
 baseurl: ''
-theme: minima
 
 collections:
   characters:

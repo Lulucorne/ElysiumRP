@@ -18,20 +18,49 @@ layout: nil
       </div>
     </header>
 
-    <main class="grid">
-      {% assign chars = site.characters | sort: "name" %} {% for c in chars %}
-      <a class="card" href="{{ site.baseurl }}{{ c.url }}" title="{{ c.name }}">
-        {% if c.portrait %}
-        <img class="card-img" src="{{ site.baseurl }}{{ c.portrait }}" alt="{{ c.name }}" />
-        {% endif %}
-        <div class="card-body">
-          <h2 class="card-title">{{ c.name }}</h2>
-          {% if c.summary %}
-          <p class="card-summary">{{ c.summary }}</p>
+    <main class="page">
+      <!-- Search box -->
+      <input
+        id="search"
+        type="search"
+        placeholder="Search characters..."
+        aria-label="Search characters"
+      />
+
+      <!-- Card grid of characters -->
+      <section class="grid" id="cards">
+        {% assign chars = site.characters | sort: "name" %} {% for c in chars %}
+        <a
+          class="card"
+          href="{{ site.baseurl }}{{ c.url }}"
+          title="{{ c.name }}"
+          data-name="{{ c.name | downcase }}"
+        >
+          {% if c.portrait %}
+          <img class="card-img" src="{{ site.baseurl }}{{ c.portrait }}" alt="{{ c.name }}" />
           {% endif %}
-        </div>
-      </a>
-      {% endfor %}
+          <div class="card-body">
+            <h2 class="card-title">{{ c.name }}</h2>
+            {% if c.summary %}
+            <p class="card-summary">{{ c.summary }}</p>
+            {% endif %}
+          </div>
+        </a>
+        {% endfor %}
+      </section>
     </main>
+
+    <script>
+      // Simple client side filter by name
+      const input = document.getElementById('search');
+      const cards = Array.from(document.querySelectorAll('#cards .card'));
+      input?.addEventListener('input', () => {
+        const q = input.value.trim().toLowerCase();
+        cards.forEach((card) => {
+          const name = card.getAttribute('data-name') || '';
+          card.style.display = name.includes(q) ? '' : 'none';
+        });
+      });
+    </script>
   </body>
 </html>
