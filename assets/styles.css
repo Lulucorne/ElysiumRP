@@ -22,6 +22,34 @@
   --page-max: 1080px;
 }
 
+.background-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.75;
+  pointer-events: none;
+  background: #000;
+}
+
+@media (prefers-reduced-motion: reduce), (prefers-reduced-data: reduce) {
+  .background-video {
+    display: none;
+  }
+  html,
+  body {
+    background: radial-gradient(1200px 600px at 50% -10%, rgba(181, 40, 210, 0.08), transparent 60%),
+      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+      url('/ElysiumRP/assets/BackgroundERP_static.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+
 /* Base canvas */
 html,
 body {
@@ -29,8 +57,7 @@ body {
   padding: 0;
 
   background: radial-gradient(1200px 600px at 50% -10%, rgba(181, 40, 210, 0.08), transparent 60%),
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url('/ElysiumRP/assets/BackgroundERP.gif');
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
 
   background-size: cover;
   background-position: center center;
@@ -239,7 +266,7 @@ strong {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('{{ "/assets/logo.png" | relative_url }}') center/200px no-repeat;
+  background: url('/ElysiumRP/assets/logo.png') center/200px no-repeat;
   opacity: 0.06;
   filter: blur(0.4px);
 }
@@ -509,8 +536,8 @@ strong {
 /* Cursors */
 html,
 body {
-  cursor: url("{{ '/assets/cursors/ely_cursor.ani' | relative_url }}") 6 2,
-    url("{{ '/assets/cursors/ely_cursor.png' | relative_url }}") 6 2, auto;
+  cursor: url('/ElysiumRP/assets/cursors/ely_cursor.ani') 6 2,
+    url('/ElysiumRP/assets/cursors/ely_cursor.png') 6 2, auto;
 }
 
 a,
@@ -519,14 +546,14 @@ button,
 .nav a,
 [role='button'],
 input[type='submit'] {
-  cursor: url("{{ '/assets/cursors/ely_pointer.cur' | relative_url }}") 8 2,
-    url("{{ '/assets/cursors/ely_pointer.png' | relative_url }}") 8 2, pointer;
+  cursor: url('/ElysiumRP/assets/cursors/ely_pointer.cur') 8 2,
+    url('/ElysiumRP/assets/cursors/ely_pointer.png') 8 2, pointer;
 }
 
 /* Reduced motion: static PNG only */
 @media (prefers-reduced-motion: reduce) {
   html,
   body {
-    cursor: url("{{ '/assets/cursors/ely_cursor.png' | relative_url }}") 6 2, auto;
+    cursor: url('/ElysiumRP/assets/cursors/ely_cursor.png') 6 2, auto;
   }
 }

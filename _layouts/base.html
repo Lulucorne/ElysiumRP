@@ -19,6 +19,11 @@
     <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
   </head>
   <body>
+    <video autoplay loop muted playsinline class="background-video">
+      <source src="{{ '/assets/BackgroundERP.mp4' | relative_url }}" type="video/mp4">
+      <img src="{{ '/assets/BackgroundERP_static.jpg' | relative_url }}" alt="Background image" />
+    </video>
+    
     <header class="site-header">
       <a class="brand" href="{{ '/' | relative_url }}">
         <img class="brand-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Logo" />
