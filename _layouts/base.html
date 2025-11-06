@@ -13,7 +13,7 @@
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}" />
 
-    <!-- Favicon -->
+    <!-- Favicons -->
     <link rel="icon" href="{{ '/assets/favicon.png' | relative_url }}" sizes="any">
     <link rel="apple-touch-icon" href="{{ '/assets/favicon.png' | relative_url }}">
     <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
@@ -31,51 +31,25 @@
            {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
 
         <a href="{{ '/characters/' | relative_url }}"
-           class="{% if page.url == '/characters/' %}active{% endif %}"
-           {% if page.url == '/characters/' %}aria-current="page"{% endif %}>Characters</a>
+           class="{% if page.url contains '/characters/' %}active{% endif %}"
+           {% if page.url contains '/characters/' %}aria-current="page"{% endif %}>Characters</a>
 
         <a href="{{ '/rules/' | relative_url }}"
-           class="{% if page.url == '/rules/' %}active{% endif %}"
-           {% if page.url == '/rules/' %}aria-current="page"{% endif %}>Rules</a>
+           class="{% if page.url contains '/rules/' %}active{% endif %}"
+           {% if page.url contains '/rules/' %}aria-current="page"{% endif %}>Rules</a>
 
         <a href="{{ '/lore/' | relative_url }}"
-           class="{% if page.url == '/lore/' %}active{% endif %}"
-           {% if page.url == '/lore/' %}aria-current="page"{% endif %}>Lore</a>
+           class="{% if page.url contains '/lore/' %}active{% endif %}"
+           {% if page.url contains '/lore/' %}aria-current="page"{% endif %}>Lore</a>
 
         <a href="{{ '/apply/' | relative_url }}"
-           class="{% if page.url == '/apply/' %}active{% endif %}"
-           {% if page.url == '/apply/' %}aria-current="page"{% endif %}>Apply</a>
+           class="{% if page.url contains '/apply/' %}active{% endif %}"
+           {% if page.url contains '/apply/' %}aria-current="page"{% endif %}>Apply</a>
       </nav>
     </header>
 
     <main class="page">
       {{ content }}
     </main>
-
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const glow = document.createElement("div");
-      glow.className = "cursor-glow";
-      document.body.appendChild(glow);
-
-      let x = 0, y = 0;
-      let targetX = 0, targetY = 0;
-      const speed = 0.15; // trail smoothness
-
-      document.addEventListener("mousemove", (e) => {
-        targetX = e.clientX;
-        targetY = e.clientY;
-      });
-
-      function animate() {
-        x += (targetX - x) * speed;
-        y += (targetY - y) * speed;
-        glow.style.transform = `translate(${x - 12}px, ${y - 12}px)`;
-        requestAnimationFrame(animate);
-      }
-
-      animate();
-    });
-    </script>
   </body>
 </html>
