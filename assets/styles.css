@@ -385,7 +385,7 @@ strong {
   box-shadow: 0 8px 24px rgba(138, 34, 194, 0.28);
 }
 .card-img {
-  width: 100%;
+  width: 250px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
