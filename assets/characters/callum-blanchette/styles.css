@@ -195,7 +195,7 @@
   }
 }
 
-/* Layout around player */
+/* Wrapper for profile pic + music player */
 .profile-and-music {
   display: flex;
   gap: 20px;
@@ -203,10 +203,10 @@
   margin-bottom: 20px;
 }
 
-/* Row for photos */
-.photo-row {
+/* Column for stacked photos */
+.photo-column {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 60px;
   flex-shrink: 0;
 }
