@@ -4,60 +4,77 @@
     <!-- Meta Data & Stylesheets -->
     <meta charset="UTF-8" />
     <!-- Title -->
-    <title>Irene Li</title>
+    <title>Callum Blanchette</title>
     <!-- Icon -->
     <link
       rel="icon"
-      href="/ElysiumRP/assets/characters/irene-li/icon/among-us.png"
+      href="/ElysiumRP/assets/characters/callum-blanchette/icon/Icon.png"
       type="image/png"
       sizes="32x32"
     />
     <!-- Any Special Fonts -->
-    <link rel="stylesheet" href="/ElysiumRP/assets/characters/irene-li/font/font.css" />
+    <link rel="stylesheet" href="/ElysiumRP/assets/characters/callum-blanchette/font/font.css" />
     <!-- Styles Connection -->
-    <link rel="stylesheet" href="/ElysiumRP/assets/characters/irene-li/styles.css" />
+    <link rel="stylesheet" href="/ElysiumRP/assets/characters/callum-blanchette/styles.css" />
     <!-- Discord / Social preview -->
-    <meta property="og:title" content="Character Sheet - Irene Li" />
+    <meta property="og:title" content="Character Sheet - Callum Blanchette" />
     <meta
       property="og:description"
-      content="You wish you could have this, you Project Zomboid nerd."
+      content="Slug's the best, obviously. Anyways, here's the goat, the one and only: Cal-Amity!"
     />
     <meta
       property="og:image"
-      content="https://lulucorne.github.io/ElysiumRP/assets/characters/irene-li/banner/Irene-Li-Banner.gif"
+      content="https://lulucorne.github.io/ElysiumRP/assets/characters/callum-blanchette/portrait/Callum-Portrait.gif"
     />
-    <meta property="og:url" content="https://lulucorne.github.io/ElysiumRP/characters/irene-li/" />
+    <meta
+      property="og:url"
+      content="https://lulucorne.github.io/ElysiumRP/characters/callum-blanchette/"
+    />
     <meta property="og:type" content="website" />
   </head>
   <!-- Background & Overlays -->
-  <body data-base="/ElysiumRP/assets/characters/irene-li">
-    <div class="background"></div>
+  <body>
+    <video autoplay muted loop playsinline class="background">
+      <source
+        src="/ElysiumRP/assets/characters/callum-blanchette/background/Background.mp4"
+        type="video/mp4"
+      />
+    </video>
     <div class="overlay1"></div>
     <div class="overlay2"></div>
     <div class="overlay3"></div>
 
-    <!-- Starting Screen -->
-    <div id="start-overlay">
-      ♥ CLICK ANYWHERE TO START THE MUSIC ♥<br />
-      You better appreciate it.
+    <!-- CSS-only gate -->
+    <input type="checkbox" id="gate" hidden />
+
+    <div id="start">
+      <video autoplay muted loop playsinline id="start-fire">
+        <source
+          src="/ElysiumRP/assets/characters/callum-blanchette/background/Fire.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      <!-- Click Layer -->
+      <label for="gate" id="start-overlay">PRESS ANYWHERE TO ENTER</label>
     </div>
 
     <!-- Actual Page -->
     <div class="container">
-      <h1>Paradise-bound</h1>
-      <p class="quote">"I come from nowhere. I'm headed to Paradise."</p>
+      <h1>Cal-Amity</h1>
+      <p class="quote">"You guys seen the shit on the news?!"</p>
 
       <!-- Profile Photos -->
       <div class="profile-and-music">
         <div class="photo-column">
           <img
-            src="/ElysiumRP/assets/characters/irene-li/portrait/Irene-Li-Portrait.gif"
-            alt="Irene Li"
+            src="/ElysiumRP/assets/characters/callum-blanchette/portrait/Callum-Portrait2.gif"
+            alt="Callum Blanchette"
             class="profile-pic"
           />
           <img
-            src="/ElysiumRP/assets/characters/irene-li/portrait/Irene-Li-Portrait2.gif"
-            alt="Irene Li"
+            src="/ElysiumRP/assets/characters/callum-blanchette/portrait/Callum-Portrait3.gif"
+            alt="Callum Blanchette"
             class="profile-pic"
           />
         </div>
@@ -115,19 +132,18 @@
         <div class="char-block">
           <h3>Basics</h3>
           <ul>
-            <li><span>Name:</span> Irene Li</li>
-            <li><span>Nickname:</span> "Paradise-Bound" & "Rey"</li>
-            <li><span>Age:</span> 26</li>
-            <li><span>Place of Birth:</span> Kentucky</li>
-            <li><span>Nationality:</span> American</li>
-            <li><span>Ethnicity:</span> Chinese</li>
+            <li><span>Name:</span> Callum Blanchette</li>
+            <li><span>Nickname:</span> “Uh, Just call me Cal.”</li>
+            <li><span>Age:</span> 23</li>
+            <li><span>Place of Birth:</span> Louisville, Kentucky</li>
+            <li><span>Nationality:</span> Canadian</li>
             <li>
-              <span>Family:</span> Estranged parents; only child. Family owned a small restaurant in
-              Chinatown
+              <span>Family:</span> Noel Blanchette (Brother) Brandon and Delaney Blanchette
+              (Parents. May they rest well.)
             </li>
-            <li><span>Languages:</span> English (fluent), Cantonese (native), Mandarin (native)</li>
-            <li><span>Occupation:</span> –</li>
-            <li><span>Group Affiliation:</span> UNKNOWN</li>
+            <li><span>Languages:</span> English, French</li>
+            <li><span>Occupation:</span> “I patch up clothes”</li>
+            <li><span>Group Affiliation:</span> N/A</li>
           </ul>
         </div>
 
@@ -135,19 +151,11 @@
         <div class="char-block">
           <h3>Appearance & Condition</h3>
           <ul>
-            <li><span>Height:</span> 5’4" (162 cm)</li>
-            <li>
-              <span>Build:</span> Lean, strength hidden under a drug-induced malnourished frame
-            </li>
-            <li><span>Hair:</span> Long, black, usually unkempt</li>
-            <li><span>Eyes:</span> Dark brown, sharp and restless</li>
-            <li>
-              <span>Features:</span> Left side of her face is scarred; similar scarring on arms,
-              abdomen, sternum
-            </li>
-            <li>
-              <span>Disabilities / Illnesses:</span> Chronic pain, Insomnia, PTSD-like symptoms
-            </li>
+            <li><span>Height:</span> 5’10" (178 cm)</li>
+            <li><span>Build:</span> Athletic, Lean</li>
+            <li><span>Hair:</span> Long and Brown. Usually unkempt as if he fingercombed it</li>
+            <li><span>Eyes:</span> Brown</li>
+            <li><span>Features:</span> Calloused fingers and a lack of common sense</li>
           </ul>
         </div>
       </section>
@@ -155,164 +163,17 @@
       <!-- About Me -->
       <div class="section about">
         <h2>About Me</h2>
-        <p>
-          Fear follows me. Blood covers me.<br />
-          But there is no law anymore, no leash.<br />
-          The dead knock at the door, but I am still standing.<br />
-          I will carve my way to Paradise, even if I am the only one left to see it.
-        </p>
+        <p>Bad at reading between the lines. Terrible with people</p>
       </div>
 
       <!-- Interests -->
       <div class="section interests">
         <h2>Interests</h2>
         <p>
-          <strong>Music:</strong> Anything that drowns out the groans of the dead.<br />
-          <strong>Movies:</strong> Wolf’s Rain reruns on a broken TV.<br />
-          <strong>Heroes:</strong> Nobody left alive.
+          <strong>Music:</strong> Whatever gets the heart pumping.<br />
+          <strong>Favorite Food Place:</strong> Spiffo's. Reminds me of the old man's cooking.<br />
+          <strong>Movies:</strong> Anything scary. Bonus points if it has shit-acting to laugh at.
         </p>
-      </div>
-
-      <!-- Blog Posts -->
-      <div class="section post-info">
-        <div class="section scrollable">
-          <h2>Posts</h2>
-          <!-- Post #1 -->
-          <div class="post">
-            <div class="date">January 30, 2017 – 3:04 AM</div>
-            <p>Wolves are supposed to be extinct.<br />Maybe so am I.</p>
-            <div class="actions">
-              <button class="like-btn">▲ Like <span>205</span></button>
-              <button class="dislike-btn">▼ Dislike <span>12</span></button>
-              <button class="comment-btn">✉︎ Comment <span>143</span></button>
-            </div>
-          </div>
-          <!-- Post #2 -->
-          <div class="post">
-            <div class="date">January 28, 2017 – 1:42 AM</div>
-            <p>
-              They say Paradise only opens when the world ends.<br />
-              The world ended. I’m still waiting.
-            </p>
-            <div class="actions">
-              <button class="like-btn">▲ Like <span>838</span></button>
-              <button class="dislike-btn">▼ Dislike <span>32</span></button>
-              <button class="comment-btn">✉︎ Comment <span>316</span></button>
-            </div>
-          </div>
-          <!-- Post #3 -->
-          <div class="post">
-            <div class="date">January 25, 2017 – 11:12 PM</div>
-            <p>
-              The pack always moves together.<br />
-              But I walk alone.
-            </p>
-            <div class="actions">
-              <button class="like-btn">▲ Like <span>561</span></button>
-              <button class="dislike-btn">▼ Dislike <span>24</span></button>
-              <button class="comment-btn">✉︎ Comment <span>218</span></button>
-            </div>
-          </div>
-          <!-- Post #4 -->
-          <div class="post">
-            <div class="date">January 24, 2017 – 6:17 AM</div>
-            <p>
-              The scent of blood carries farther than flowers.<br />
-              Maybe it still leads to Paradise.
-            </p>
-            <div class="actions">
-              <button class="like-btn">▲ Like <span>553</span></button>
-              <button class="dislike-btn">▼ Dislike <span>20</span></button>
-              <button class="comment-btn">✉︎ Comment <span>115</span></button>
-            </div>
-          </div>
-          <!-- Post #5 -->
-          <div class="post">
-            <div class="date">January 21, 2017 – 2:29 AM</div>
-            <p>
-              Wolves wear human skin.<br />
-              I wear blood.
-            </p>
-            <div class="actions">
-              <button class="like-btn">▲ Like <span>952</span></button>
-              <button class="dislike-btn">▼ Dislike <span>31</span></button>
-              <button class="comment-btn">✉︎ Comment <span>362</span></button>
-            </div>
-          </div>
-          <!-- Post #6 -->
-          <div class="post">
-            <div class="date">January 19, 2017 – 4:44 AM</div>
-            <p>
-              He was always looking forward.<br />
-              I only look back.
-            </p>
-            <div class="actions">
-              <button class="like-btn">▲ Like <span>496</span></button>
-              <button class="dislike-btn">▼ Dislike <span>13</span></button>
-              <button class="comment-btn">✉︎ Comment <span>203</span></button>
-            </div>
-          </div>
-          <!-- Post #7 -->
-          <div class="post">
-            <div class="date">January 18, 2017 – 10:08 PM</div>
-            <p>
-              She chased her hunger.<br />
-              I chase silence.
-            </p>
-            <div class="actions">
-              <button class="like-btn">▲ Like <span>778</span></button>
-              <button class="dislike-btn">▼ Dislike <span>36</span></button>
-              <button class="comment-btn">✉︎ Comment <span>114</span></button>
-            </div>
-          </div>
-          <!-- Post #8 -->
-          <div class="post">
-            <div class="date">January 16, 2017 – 12:21 AM</div>
-            <p>
-              Paradise.<br />
-              Is it a place, or just the absence of fear?
-            </p>
-            <div class="actions">
-              <button class="like-btn">▲ Like <span>365</span></button>
-              <button class="dislike-btn">▼ Dislike <span>66</span></button>
-              <button class="comment-btn">✉︎ Comment <span>253</span></button>
-            </div>
-          </div>
-          <!-- Post #9 -->
-          <div class="post">
-            <div class="date">January 13, 2017 – 9:33 PM</div>
-            <p>
-              Wolves follow the Lunar Flower.<br />
-              I only follow the smell of smoke.
-            </p>
-            <div class="actions">
-              <button class="like-btn">▲ Like <span>606</span></button>
-              <button class="dislike-btn">▼ Dislike <span>61</span></button>
-              <button class="comment-btn">✉︎ Comment <span>355</span></button>
-            </div>
-          </div>
-          <!-- Post #10 -->
-          <div class="post">
-            <div class="date">January 11, 2017 – 1:55 AM</div>
-            <p>
-              Paradise is for wolves.<br />
-              What’s left for me?
-            </p>
-            <div class="actions">
-              <button class="like-btn">▲ Like <span>318</span></button>
-              <button class="dislike-btn">▼ Dislike <span>23</span></button>
-              <button class="comment-btn">✉︎ Comment <span>264</span></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Comment Section -->
-      <div class="section comments">
-        <h2>Comments</h2>
-        <p><em>[comment deleted]</em></p>
-        <p><em>[comment deleted]</em></p>
-        <p><em>"She was here. Covered in blood. Still smiling." – Anonymous</em></p>
       </div>
 
       <!-- Footer -->
@@ -320,6 +181,6 @@
     </div>
 
     <!-- Script Connection -->
-    <script src="/ElysiumRP/assets/characters/irene-li/script.js"></script>
+    <script src="/ElysiumRP/assets/characters/callum-blanchette/script.js"></script>
   </body>
 </html>
