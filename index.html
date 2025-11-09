@@ -3,24 +3,19 @@ layout: base
 title: Home
 ---
 
-{% include hero.html title="Elysium Roleplay" subtitle="Home Page" %}
-
 <section class="hero">
-  <h2>Welcome to {{ site.title }}</h2>
-  <p>
-    All of you stink, <strong>Slug's the best.</strong> This is temporary until
-    <strong>SOMEONE</strong> flipping tell me what they want on the main page!
-  </p>
-  <p>
-    This is a passion project from <u><strong>SlugGirl</strong></u
-    >. All of this is free and will remain free.
-  </p>
-  <p>
-    <a
-      class="card"
-      href="https://lulucorne.github.io/ElysiumRP/characters"
-      style="display: inline-block; padding: 10px 14px"
-      >Browse Characters</a
-    >
-  </p>
+  <div class="hero-inner">
+    <h2>Welcome to {{ site.title }}</h2>
+    <p>
+      All of you stink, <strong>Slug's the best.</strong> This is temporary until
+      <strong>SOMEONE</strong> flipping tell me what they want on the main page!
+    </p>
+    <p>
+      This is a passion project from <u><strong>SlugGirl</strong></u
+      >. All of this is free and will remain free.
+    </p>
+    <p>
+      <a class="btn" href="{{ '/characters/' | relative_url }}">Browse Characters</a>
+    </p>
+  </div>
 </section>
