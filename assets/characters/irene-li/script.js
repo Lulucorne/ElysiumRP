@@ -14,7 +14,6 @@ const muteBtn = document.getElementById('mute-btn');
 let currentIndex = 0;
 let isShuffled = false;
 
-// Song list: easy to edit
 const songs = [
   {
     title: 'Theme of Laura',
