@@ -333,16 +333,10 @@ strong {
 .section ul {
   margin: 10px 0 0 1.2rem;
   padding: 0;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
 }
 .section li {
   margin: 6px 0;
   text-align: justify;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
 }
 
 /* Characters grid on Home */
@@ -577,4 +571,70 @@ input[type='submit'] {
   height: 455px;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.section.poem {
+  text-align: center;
+  padding: 28px 18px 30px;
+}
+
+.section.poem p {
+  text-align: center;
+  margin: 4px 0;
+}
+
+.section.poem p:first-child {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--acid-400);
+  text-shadow: 0 0 6px rgba(198, 208, 58, 0.45), 0 0 14px rgba(111, 27, 158, 0.7),
+    0 0 26px rgba(177, 33, 167, 0.55);
+  animation: ouro-title-glow 3.5s ease-in-out infinite;
+}
+
+.section.poem p:not(:first-child) {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--muted-400);
+  text-shadow: 0 0 4px rgba(177, 33, 167, 0.4), 0 0 10px rgba(111, 27, 158, 0.5);
+  animation: ouro-line-glow 4.2s ease-in-out infinite alternate;
+}
+
+@keyframes ouro-title-glow {
+  0% {
+    color: var(--acid-400);
+    text-shadow: 0 0 4px rgba(198, 208, 58, 0.4), 0 0 10px rgba(111, 27, 158, 0.65),
+      0 0 20px rgba(177, 33, 167, 0.4);
+  }
+  45% {
+    color: var(--acid-500);
+    text-shadow: 0 0 8px rgba(198, 208, 58, 0.7), 0 0 20px rgba(111, 27, 158, 0.9),
+      0 0 34px rgba(177, 33, 167, 0.7);
+  }
+  100% {
+    color: var(--acid-400);
+    text-shadow: 0 0 5px rgba(198, 208, 58, 0.5), 0 0 14px rgba(111, 27, 158, 0.7),
+      0 0 26px rgba(177, 33, 167, 0.55);
+  }
+}
+
+@keyframes ouro-line-glow {
+  0% {
+    opacity: 0.85;
+    text-shadow: 0 0 3px rgba(177, 33, 167, 0.35), 0 0 8px rgba(111, 27, 158, 0.35);
+  }
+  35% {
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(177, 33, 167, 0.55), 0 0 14px rgba(111, 27, 158, 0.6);
+  }
+  70% {
+    opacity: 0.9;
+    text-shadow: 0 0 4px rgba(177, 33, 167, 0.45), 0 0 10px rgba(111, 27, 158, 0.5);
+  }
+  100% {
+    opacity: 0.8;
+    text-shadow: 0 0 2px rgba(177, 33, 167, 0.3), 0 0 6px rgba(111, 27, 158, 0.35);
+  }
 }

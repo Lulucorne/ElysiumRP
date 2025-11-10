@@ -5,12 +5,11 @@ title: Lore
 
 {% include hero.html title="Elysium Roleplay" subtitle="Season One" %}
 
-<div class="section">
-  <p><strong>Elysium Roleplay</strong> invites players into its first season: <em>Ouroboros</em>, a story about endings, beginnings, and the cyclical nature of life amidst catastrophe.</p>
-
-  <p><strong>Season One</strong> begins at the dawn of collapse — when denial still outweighed panic, and fear crept quietly through Kentucky.</p>
-
-  <p><em>“A flower in sun, as an old rabbit succumbs. In its death, life grows.”</em></p>
+<div class="section poem">
+  <p><strong>Ouroboros</strong></p>
+  <p><em>A flower in sun</em></p>
+  <p><em>As an old rabbit succumbs</em></p>
+  <p><em>In its death, life grows</em></p>
 </div>
 
 <div class="section">
