@@ -7,9 +7,9 @@ title: Lore
 
 <div class="section poem">
   <p><strong>Ouroboros</strong></p>
-  <p><em>A flower in sun</em></p>
-  <p><em>As an old rabbit succumbs</em></p>
-  <p><em>In its death, life grows</em></p>
+  <p><em>A flower in sun,</em></p>
+  <p><em>As an old rabbit succumbs,</em></p>
+  <p><em>In its death, life grows.</em></p>
 </div>
 
 <div class="section">
