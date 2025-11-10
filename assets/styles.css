@@ -306,6 +306,9 @@ strong {
 
 .section p {
   text-align: justify;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .section > h2:first-child,
@@ -330,10 +333,16 @@ strong {
 .section ul {
   margin: 10px 0 0 1.2rem;
   padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
 }
 .section li {
   margin: 6px 0;
   text-align: justify;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 /* Characters grid on Home */
@@ -564,8 +573,8 @@ input[type='submit'] {
   margin: 18px auto;
   max-width: 100%;
   width: 100%;
-  max-height: 260px;
-  height: 260px;
+  max-height: 455px;
+  height: 455px;
   object-fit: cover;
   border-radius: 8px;
 }
