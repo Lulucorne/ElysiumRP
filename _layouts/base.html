@@ -17,6 +17,29 @@
     <link rel="icon" href="{{ '/assets/favicon.png' | relative_url }}" sizes="any">
     <link rel="apple-touch-icon" href="{{ '/assets/favicon.png' | relative_url }}">
     <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
+
+    {% if page.meta %}
+      {% if page.meta.og_title %}
+      <meta property="og:title" content="{{ page.meta.og_title }}" />
+      {% endif %}
+      {% if page.meta.og_description %}
+      <meta property="og:description" content="{{ page.meta.og_description }}" />
+      {% endif %}
+      {% if page.meta.og_image %}
+      <meta property="og:image" content="{{ page.meta.og_image }}" />
+      {% endif %}
+      {% if page.meta.og_url %}
+      <meta property="og:url" content="{{ page.meta.og_url }}" />
+      {% endif %}
+
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Elysium Roleplay" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="{{ page.meta.og_title }}" />
+      <meta name="twitter:description" content="{{ page.meta.og_description }}" />
+      <meta name="twitter:image" content="{{ page.meta.og_image }}" />
+    {% endif %}
   </head>
   <body>
     <video autoplay loop muted playsinline class="background-video">

@@ -3,7 +3,7 @@ layout: base
 title: Lore
 ---
 
-{% include hero.html title="Elysium Roleplay" subtitle="Season One — Ouroboros" %}
+{% include hero.html title="Elysium Roleplay" subtitle="Season One" %}
 
 <div class="section">
   <p><strong>Elysium Roleplay</strong> invites players into its first season: <em>Ouroboros</em>, a story about endings, beginnings, and the cyclical nature of life amidst catastrophe.</p>
