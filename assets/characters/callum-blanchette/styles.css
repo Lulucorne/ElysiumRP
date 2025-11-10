@@ -597,6 +597,7 @@ h2 {
 .section {
   clear: both;
   margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 /* About Me and Interests Sections */
