@@ -7,6 +7,9 @@ html {
    THEME - THIS IS WHERE YOU GUYS EDIT SHIT!
 ========================================= */
 :root {
+  /* Layout */
+  --page-max: 1100px;
+
   /* Backgrounds */
   --color-bg-main: #2f5277; /* page */
   --color-bg-surface: #244b6a; /* panels */
@@ -85,7 +88,7 @@ html {
   --font-size-small: 16px;
 
   /* Layout + radii + spacing */
-  --container-width: 800px;
+  --container-width: 1000px;
   --radius-xs: 4px;
   --radius-sm: 5px;
   --radius-md: 6px;
@@ -218,8 +221,8 @@ html {
 }
 
 .brand-logo {
-  width: 42px;
-  height: 42px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   filter: drop-shadow(0 0 8px var(--color-glow-alt));
   transition: transform 0.2s ease, filter 0.25s ease;
@@ -230,13 +233,14 @@ html {
 }
 
 .brand-name {
-  font-family: var(--brand-font);
+  font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: var(--brand-text);
+  font-size: var(--font-size-h1);
   text-transform: uppercase;
-  text-shadow: var(--brand-glow-1), var(--brand-glow-2), var(--brand-glow-3);
-  transition: color 0.25s ease, text-shadow 0.25s ease;
+  color: var(--color-text-main);
+  text-shadow: 0 0 5px var(--color-accent-soft), 0 0 10px var(--color-accent-alt),
+    0 0 15px var(--color-accent), 0 0 20px var(--color-accent-light);
 }
 .brand-name:hover {
   color: var(--color-accent);
@@ -244,6 +248,12 @@ html {
     0 0 28px var(--color-glow-alt);
 }
 
+.brand,
+.brand:visited,
+.brand:hover,
+.brand:focus {
+  text-decoration: none;
+}
 /* =========================================
    BACKGROUND LAYER
 ========================================= */
@@ -444,8 +454,8 @@ html {
 }
 
 .tumblr-icon {
-  width: 54px;
-  height: 54px;
+  width: 60px;
+  height: 60px;
   border-radius: 6px;
   transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
@@ -472,7 +482,7 @@ html {
 }
 .music-player-container h2 {
   margin: 0 0 10px 0;
-  font-size: 18px;
+  font-size: var(--font-size-h2);
   color: var(--color-accent-light);
   text-shadow: 0 0 6px var(--color-glow-alt), 0 0 14px var(--color-glow-main);
   letter-spacing: 2px;
@@ -519,7 +529,7 @@ html {
   color: var(--color-text-soft);
   font-family: var(--font-monospace);
   font-size: 18px;
-  padding: 8px 12px;
+  padding: 8px 6px;
   border-radius: var(--radius-md);
   cursor: pointer;
   margin: 0 4px;
@@ -699,11 +709,12 @@ button:focus-visible,
 }
 .character-info h2 {
   text-align: center;
-  font-size: 22px;
+  font-size: var(--font-size-h2);
   margin-bottom: 10px;
   color: var(--color-text-subtle);
   text-transform: uppercase;
   letter-spacing: 3px;
+  padding-bottom: 10px;
 }
 .character-info .divider {
   height: 2px;
@@ -729,6 +740,7 @@ button:focus-visible,
 }
 .char-block h3 {
   margin-bottom: 12px;
+  margin-top: 12px;
   font-size: var(--font-size-h3);
   color: var(--color-accent-light);
   text-transform: uppercase;
@@ -743,7 +755,7 @@ button:focus-visible,
 }
 .char-block li {
   margin-bottom: 8px;
-  font-size: 14px;
+  font-size: var(--font-size-base);
 }
 .char-block li span {
   color: var(--color-accent-soft);
@@ -766,7 +778,7 @@ button:focus-visible,
 }
 .post-info h2 {
   text-align: center;
-  font-size: 22px;
+  font-size: var(--font-size-h2);
   margin-bottom: 10px;
   color: var(--color-text-subtle);
   text-transform: uppercase;
@@ -777,7 +789,7 @@ button:focus-visible,
   border: 1px solid var(--color-border-strong);
   padding: 15px 20px;
   margin-bottom: 20px;
-  font-size: 15px;
+  font-size: var(--font-size-base);
   line-height: 1.6;
   border-radius: var(--radius-md);
   box-shadow: 0 0 12px var(--color-black) inset;
@@ -928,6 +940,7 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bolder;
+  font-size: var(--font-size-h2);
 }
 .section.interests strong {
   color: var(--color-accent-alt);
@@ -998,7 +1011,7 @@ h2 {
 }
 .friend figcaption {
   margin-top: 6px;
-  font-size: 13px;
+  font-size: var(--font-size-base);
   line-height: 1.2;
   color: var(--color-text-subtle);
   font-family: var(--font-monospace);
@@ -1013,7 +1026,7 @@ h2 {
 ========================================= */
 .footer {
   margin-top: 40px;
-  font-size: 14px;
+  font-size: var(--font-size-small);
   color: var(--color-text-subtle);
   text-align: center;
   font-family: var(--font-monospace);
