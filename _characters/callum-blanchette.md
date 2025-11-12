@@ -1,6 +1,6 @@
 ---
-name: Callum Blanchette
-title: Callum Blanchette
+name: Callum "Cal" Blanchette
+title: Callum "Cal" Blanchette
 summary: 'Cal-Amity'
 portrait: /assets/characters/callum-blanchette/portrait/Callum-Portrait.gif
 custom_url: /characters/callum-blanchette/

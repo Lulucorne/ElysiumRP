@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ==========================
+         BASIC META / TITLE
+         ========================== -->
+    <meta charset="UTF-8" />
+    <title>Percival Yeon</title>
+
+    <!-- Favicon (optional per character) -->
+    <link
+      rel="icon"
+      href="/ElysiumRP/assets/favicon.png"
+      type="image/png"
+      sizes="32x32"
+    />
+
+    <!-- Optional per-character font file -->
+    <link rel="stylesheet" href="/ElysiumRP/assets/characters/percival-yeon/font/font.css" />
+
+    <!-- Main character styles -->
+    <link rel="stylesheet" href="/ElysiumRP/assets/characters/percival-yeon/styles.css" />
+    <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}" />
+
+
+    <!-- ==========================
+         SOCIAL / DISCORD PREVIEW
+         ========================== -->
+    <meta property="og:title" content="Character Sheet - Percival Yeon" />
+    <meta property="og:description" content="21 | cooper union '18 ME | i like music" />
+    <meta
+      property="og:image"
+      content="https://lulucorne.github.io/ElysiumRP/assets/characters/percival-yeon/portrait/percival-yeon-portrait1.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://lulucorne.github.io/ElysiumRP/characters/percival-yeon/"
+    />
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body data-base="/ElysiumRP/assets/characters/percival-yeon">
+  <video class="overlay1" autoplay loop muted playsinline preload="auto">
+    <source src="https://lulucorne.github.io/ElysiumRP/assets/characters/percival-yeon/background/overlay1.mp4" type="video/mp4" />
+  </video>
+    <!-- ==========================
+         BACKGROUND & OVERLAYS
+         ========================== -->
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img class="brand-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Logo" />
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+
+    <nav class="nav">
+      <a href="{{ '/' | relative_url }}"
+         class="{% if page.url == '/' %}active{% endif %}"
+         {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
+
+      <a href="{{ '/characters/' | relative_url }}"
+         class="{% if page.url contains '/characters/' %}active{% endif %}"
+         {% if page.url contains '/characters/' %}aria-current="page"{% endif %}>Characters</a>
+
+      <a href="{{ '/rules/' | relative_url }}"
+         class="{% if page.url contains '/rules/' %}active{% endif %}"
+         {% if page.url contains '/rules/' %}aria-current="page"{% endif %}>Rules</a>
+
+      <a href="{{ '/lore/' | relative_url }}"
+         class="{% if page.url contains '/lore/' %}active{% endif %}"
+         {% if page.url contains '/lore/' %}aria-current="page"{% endif %}>Lore</a>
+
+      <a href="{{ '/apply/' | relative_url }}"
+         class="{% if page.url contains '/apply/' %}active{% endif %}"
+         {% if page.url contains '/apply/' %}aria-current="page"{% endif %}>Apply</a>
+    </nav>
+  </header>
+  <main class="page">
+    <!-- ==========================
+         MAIN CONTENT WRAPPER
+         ========================== -->
+    <div class="container">
+      <div class="handle-row">
+        <h1>@percy-yeon</h1>
+        <a href="https://percy-yeon.straw.page"
+          target="_blank"
+          rel="noopener"
+          aria-label="Percy Yeon's Tumblr">
+          <img src="/ElysiumRP/assets/characters/percival-yeon/icon/tumblr.gif"
+              alt="Tumblr Icon"
+              class="tumblr-icon" />
+        </a>
+      </div>
+      <p class="quote">21<br />cooper union '18 ME<br />i like music</p>
+
+      <!-- ==========================
+           PROFILE PHOTOS + MUSIC PLAYER
+           ========================== -->
+      <div class="profile-and-music">
+        <!-- Profile Photos -->
+        <div class="photo-column">
+          <img
+            src="/ElysiumRP/assets/characters/percival-yeon/portrait/percival-yeon-portrait1.jpg"
+            alt="Percival Yeon"
+            class="profile-pic"
+          />
+          <img
+            src="/ElysiumRP/assets/characters/percival-yeon/portrait/percival-yeon-portrait2.jpg"
+            alt="Percival Yeon"
+            class="profile-pic"
+          />
+        </div>
+
+        <!-- Music Player -->
+        <div class="music-player-container">
+          <h2>Playlist</h2>
+
+          <div class="cover-art-container" style="text-align: center; margin-bottom: 10px">
+            <img
+              id="cover-art"
+              src="/ElysiumRP/assets/characters/percival-yeon/music/cover/Boys Don_t Cry - Single Version - The Cure.jpeg"
+              alt="Cover Art"
+            />
+            <div id="track-info"></div>
+            <div id="time-stamp">0:00 / 2:36</div>
+          </div>
+
+          <!-- Controls -->
+          <div class="music-controls">
+            <audio id="audio" autoplay></audio>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.1" />
+            <button id="mute-btn">🕪</button>
+            <button id="play-pause">▶</button>
+            <button id="shuffle-btn">⇆</button>
+          </div>
+
+          <div class="playlist scrollable" id="playlist"></div>
+        </div>
+      </div>
+
+      <!-- ==========================
+           TOP FRIENDS
+           ========================== -->
+      <!-- <div class="section">
+        <h2>Top Friends</h2>
+
+        <div class="friends">
+          <figure class="friend">
+            <img
+              src="/ElysiumRP/assets/characters/percival-yeon/friends/Friend1.jpg"
+              alt="Friend 1"
+            />
+            <figcaption>Friend 1</figcaption>
+          </figure>
+
+          <figure class="friend">
+            <img
+              src="/ElysiumRP/assets/characters/percival-yeon/friends/Friend2.jpg"
+              alt="Friend 2"
+            />
+            <figcaption>Friend 2</figcaption>
+          </figure>
+        </div>
+      </div> -->
+
+      <!-- ==========================
+           BACKPACK & GEAR
+           ========================== -->
+      <!-- <section class="char-block backpack-block">
+        <h3>Backpack &amp; Gear</h3>
+        <div class="backpack-image">
+          <img
+            src="/ElysiumRP/assets/characters/percival-yeon/bag/Backpack.png"
+            alt="Percival Yeon's Backpack"
+            class="backpack-pic"
+          />
+        </div>
+      </section> -->
+
+      <!-- ==========================
+           OOC CHARACTER INFORMATION
+           ========================== -->
+      <section class="character-info">
+        <h2>OOC Character Information</h2>
+        <div class="divider"></div>
+
+        <!-- Basics -->
+        <div class="char-block">
+          <h3>Basics</h3>
+          <ul>
+            <li><span>Name:</span> Percival Yeon</li>
+            <li><span>Nickname:</span> 'Percy'</li>
+            <li><span>Age:</span> 21</li>
+            <li><span>Place of Birth:</span> Manhattan, New York</li>
+            <li><span>Nationality:</span> American</li>
+            <li><span>Ethnicity:</span> Korean</li>
+            <li><span>Family:</span> Alice Yeon</li>
+            <li><span>Languages:</span> English</li>
+          </ul>
+        </div>
+
+        <!-- Appearance & Condition -->
+        <div class="char-block">
+          <h3>Appearance &amp; Condition</h3>
+          <ul>
+            <li><span>Height:</span> 5'11" (180 cm)</li>
+            <li><span>Build:</span> Average</li>
+            <li><span>Hair:</span> Black</li>
+            <li><span>Eyes:</span> Dark brown, monolids</li>
+            <li>
+              <span>Features:</span>
+              <ul>
+                <li>Usually sporting a pair of black, rounded-rectangle frames</li>
+                <li>Low, soft-spoken voice</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==========================
+           ABOUT ME
+           ========================== -->
+      <!-- <div class="section about">
+        <h2>About Me</h2>
+        <p>
+          Write about the character's personality, vibes, and how they act around others. This is
+          your little blurb to give people a feel for them.
+        </p>
+      </div> -->
+
+      <!-- ==========================
+           INTERESTS
+           ========================== -->
+      <!-- <div class="section interests">
+        <h2>Interests</h2>
+        <p>
+          <strong>Music:</strong> What they like to listen to.<br />
+          <strong>Favorite Food Place:</strong> Their go-to spot.<br />
+          <strong>Movies:</strong> Favorite genres, shows, or films.
+        </p>
+      </div> -->
+
+      <!-- ==========================
+           FOOTER
+           ========================== -->
+      <div class="footer">Last Login: JANUARY 13, 2017</div>
+    </div>
+
+    <!-- ==========================
+         SCRIPT (SHARED PLAYER / ICON LOGIC)
+         ========================== -->
+    <script src="/ElysiumRP/assets/characters/percival-yeon/script.js"></script>
+  </body>
+</html>
