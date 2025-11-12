@@ -7,9 +7,6 @@ html {
    THEME - THIS IS WHERE YOU GUYS EDIT SHIT!
 ========================================= */
 :root {
-  /* Layout */
-  --page-max: 1100px;
-
   /* Backgrounds */
   --color-bg-main: #2f5277; /* page */
   --color-bg-surface: #244b6a; /* panels */
