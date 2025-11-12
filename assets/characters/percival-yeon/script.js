@@ -18,27 +18,27 @@ const songs = [
   {
     title: 'Tear in My Heart',
     artist: 'Twenty One Pilots',
-    src: 'assets/characters/perciva-yeon/music/Tear in My Heart - Twenty One Pilots.mp3',
-    cover: 'assets/characters/perciva-yeon/music/cover/Tear in My Heart - Twenty One Pilots.jpeg',
+    src: 'assets/characters/percival-yeon/music/Tear in My Heart - Twenty One Pilots.mp3',
+    cover: 'assets/characters/percival-yeon/music/cover/Tear in My Heart - Twenty One Pilots.jpeg',
   },
   {
     title: "Boys Don't Cry (Single Version)",
     artist: 'The Cure',
-    src: 'assets/characters/perciva-yeon/music/Boys Don_t Cry - Single Version - The Cure.mp3',
+    src: 'assets/characters/percival-yeon/music/Boys Don_t Cry - Single Version - The Cure.mp3',
     cover:
-      'assets/characters/perciva-yeon/music/cover/Boys Don_t Cry - Single Version - The Cure.jpeg',
+      'assets/characters/percival-yeon/music/cover/Boys Don_t Cry - Single Version - The Cure.jpeg',
   },
   {
     title: 'Smells Like Teen Spirit',
     artist: 'Nirvana',
-    src: 'assets/characters/perciva-yeon/music/Smells Like Teen Spirit - Nirvana.mp3',
-    cover: 'assets/characters/perciva-yeon/music/cover/Smells Like Teen Spirit - Nirvana.jpeg',
+    src: 'assets/characters/percival-yeon/music/Smells Like Teen Spirit - Nirvana.mp3',
+    cover: 'assets/characters/percival-yeon/music/cover/Smells Like Teen Spirit - Nirvana.jpeg',
   },
   {
     title: 'Sweater Weather',
     artist: 'The Neighbourhood',
-    src: 'assets/characters/perciva-yeon/music/Sweater Weather - The Neighbourhood.mp3',
-    cover: 'assets/characters/perciva-yeon/music/cover/Sweater Weather - The Neighbourhood.jpeg',
+    src: 'assets/characters/percival-yeon/music/Sweater Weather - The Neighbourhood.mp3',
+    cover: 'assets/characters/percival-yeon/music/cover/Sweater Weather - The Neighbourhood.jpeg',
   },
 ];
 
@@ -64,8 +64,8 @@ volumeSlider.value = audio.volume;
 function playTrack(index) {
   currentIndex = index;
   const song = songs[index];
-  const srcPath = song.src.replace(/^assets\/characters\/perciva-yeon\//, '');
-  const coverPath = song.cover.replace(/^assets\/characters\/perciva-yeon\//, '');
+  const srcPath = song.src.replace(/^assets\/characters\/percival-yeon\//, '');
+  const coverPath = song.cover.replace(/^assets\/characters\/percival-yeon\//, '');
   audio.src = `${BASE}/${srcPath}`;
   coverArt.src = `${BASE}/${coverPath}`;
   trackInfo.textContent = `✦ ${song.title} – ${song.artist} ✦`;
