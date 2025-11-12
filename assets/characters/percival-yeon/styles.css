@@ -7,19 +7,22 @@ html {
    THEME - THIS IS WHERE YOU GUYS EDIT SHIT!
 ========================================= */
 :root {
+  /* Layout */
+  --page-max: 1100px;
+
   /* Backgrounds */
   --color-bg-main: #2f5277; /* page */
   --color-bg-surface: #244b6a; /* panels */
   --color-bg-card: #183a56; /* cards */
   --color-bg-inner: #132c43; /* inner blocks */
   --color-bg-image: #0f2234; /* image wells */
-  --color-container-bg: rgba(10, 23, 36, 0.92);
+  --color-container-bg: rgba(10, 23, 36, 0.75);
 
   /* Accents */
   --color-accent: #5fa3e3; /* primary buttons, active */
   --color-accent-alt: #3e89d6; /* secondary accent */
   --color-accent-soft: #8fbce6; /* headings, soft lines */
-  --color-accent-gold: #cfe4ff; /* light highlight */
+  --color-accent-light: #cfe4ff; /* light highlight */
   --color-accent-highlight: #e6f2ff;
 
   /* Accent tints */
@@ -78,11 +81,11 @@ html {
   --font-heading: 'Vaseline Extra', 'Roung', sans-serif;
   --font-monospace: 'Roung', system-ui, sans-serif;
 
-  --font-size-base: 15px;
-  --font-size-h1: 36px;
-  --font-size-h2: 20px;
-  --font-size-h3: 16px;
-  --font-size-small: 12px;
+  --font-size-base: 20px;
+  --font-size-h1: 50px;
+  --font-size-h2: 40px;
+  --font-size-h3: 30px;
+  --font-size-small: 16px;
 
   /* Layout + radii + spacing */
   --container-width: 800px;
@@ -105,6 +108,43 @@ html {
   /* Opacities */
   --opacity-strong: 0.9;
   --opacity-soft: 0.7;
+
+  /* Nav tokens derived from your palette */
+  --nav-soft-bg: rgba(143, 188, 230, 0.1); /* from --color-accent-soft, lighter film */
+  --nav-dark-bg: rgba(19, 44, 67, 0.4); /* echoes --color-bg-inner with alpha */
+  --nav-border: rgba(23, 50, 74, 0.55); /* from --color-border-soft with alpha */
+  --nav-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+
+  /* Link colors */
+  --nav-link-bg: rgba(255, 255, 255, 0.02);
+  --nav-link-border: rgba(23, 50, 74, 0.45);
+  --nav-link-text: var(--color-text-main);
+
+  --nav-link-hover-bg: var(--color-accent-soft-bg); /* same family tint */
+  --nav-link-hover-border: var(--color-accent-soft-border);
+  --nav-link-hover-text: var(--color-text-emphasis);
+
+  --nav-link-active-outline: var(--color-accent-soft);
+  --nav-link-active-bg: rgba(63, 150, 230, 0.45); /* from --color-accent-strong-bg with alpha */
+  --nav-link-active-border: var(--color-border-strong);
+  --nav-link-active-text: var(--color-text-emphasis);
+  --nav-link-active-glow: var(--color-glow-alt);
+
+  /* Brand */
+  --brand-font: 'Orbitron', var(--font-heading), sans-serif;
+  --brand-text: var(--color-accent-light);
+  --brand-glow-1: 0 0 6px var(--color-glow-alt);
+  --brand-glow-2: 0 0 14px var(--color-glow-main);
+  --brand-glow-3: 0 0 24px rgba(63, 150, 230, 0.25);
+  --brand-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+
+  /* Header + focus derived tokens */
+  --header-bg-start: rgba(19, 44, 67, 0.28);
+  --header-bg-end: rgba(10, 23, 36, 0.18);
+  --header-border: rgba(23, 50, 74, 0.45);
+  --header-shadow: 0 4px 20px rgba(0, 0, 0, 0.24);
+
+  --focus-ring-outer: rgba(95, 163, 227, 0.25); /* used for slider focus halo */
 }
 
 /* =========================================
@@ -118,39 +158,37 @@ html {
   flex-wrap: wrap;
   margin: 0;
   padding: 10px 18px;
-  background: linear-gradient(135deg, var(--color-accent-soft-bg), var(--color-accent-dark-bg));
-  border: 1px solid var(--color-border-soft);
+  background: linear-gradient(135deg, var(--nav-soft-bg), var(--nav-dark-bg));
+  border: 1px solid var(--nav-border);
   border-radius: var(--radius-xl);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-strong);
+  backdrop-filter: blur(10px) saturate(115%);
+  -webkit-backdrop-filter: blur(10px) saturate(115%);
+  box-shadow: var(--nav-shadow);
 }
-
-/* Nav links */
 .nav a {
   padding: 8px 14px;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.03); /* keep a hair of glass so it layers */
-  border: 1px solid var(--color-border-soft);
-  color: var(--color-text-main);
+  background: var(--nav-link-bg);
+  border: 1px solid var(--nav-link-border);
+  color: var(--nav-link-text);
   font-weight: 500;
   text-decoration: none;
-  transition: background 0.15s ease, transform 0.12s ease, color 0.15s ease;
+  transition: background 0.15s ease, transform 0.12s ease, color 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
-
 .nav a:hover {
-  background: var(--color-accent-soft-bg);
-  border-color: var(--color-accent-soft-border);
+  background: var(--nav-link-hover-bg);
+  border-color: var(--nav-link-hover-border);
   transform: translateY(-1px);
-  color: var(--color-text-emphasis);
+  color: var(--nav-link-hover-text);
+  box-shadow: 0 0 10px var(--color-glow-alt);
 }
-
 .nav a.active {
-  outline: 1px solid var(--color-accent-soft);
-  background: var(--color-accent-strong-bg);
-  border-color: var(--color-border-strong);
-  color: var(--color-text-emphasis);
-  text-shadow: 0 0 6px var(--color-glow-alt);
+  outline: 1px solid var(--nav-link-active-outline);
+  background: var(--nav-link-active-bg);
+  border-color: var(--nav-link-active-border);
+  color: var(--nav-link-active-text);
+  text-shadow: 0 0 6px var(--nav-link-active-glow);
 }
 
 /* Header brand strip */
@@ -163,26 +201,50 @@ html {
   justify-content: space-between;
   gap: 14px;
   flex-wrap: wrap;
+  background: linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
+  border: 1px solid var(--header-border);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: var(--header-shadow);
 }
 @media (max-width: 600px) {
   .site-header {
     padding: 20px;
   }
 }
+
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.brand-name {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
+
 .brand-logo {
   width: 42px;
   height: 42px;
   object-fit: contain;
+  filter: drop-shadow(0 0 8px var(--color-glow-alt));
+  transition: transform 0.2s ease, filter 0.25s ease;
+}
+.brand-logo:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 12px var(--color-glow-main));
+}
+
+.brand-name {
+  font-family: var(--brand-font);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--brand-text);
+  text-transform: uppercase;
+  text-shadow: var(--brand-glow-1), var(--brand-glow-2), var(--brand-glow-3);
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+.brand-name:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 6px var(--color-accent), 0 0 16px var(--color-glow-main),
+    0 0 28px var(--color-glow-alt);
 }
 
 /* =========================================
@@ -285,7 +347,7 @@ html {
   text-transform: uppercase;
   letter-spacing: 3px;
   text-shadow: 0 0 8px var(--color-accent-alt), 0 0 15px var(--color-accent-soft),
-    0 0 25px var(--color-accent-gold);
+    0 0 25px var(--color-accent-light);
   animation: overlayShift 8s linear infinite, fireGlow 3s ease-in-out infinite alternate;
 }
 #gate:checked + #start {
@@ -308,12 +370,12 @@ html {
   0% {
     color: var(--color-start-text-main);
     text-shadow: 0 0 6px var(--color-accent), 0 0 15px var(--color-accent-soft),
-      0 0 25px var(--color-accent-gold);
+      0 0 25px var(--color-accent-light);
   }
   100% {
     color: var(--color-start-text-alt);
     text-shadow: 0 0 12px var(--color-accent-soft), 0 0 25px var(--color-accent),
-      0 0 40px var(--color-accent-gold);
+      0 0 40px var(--color-accent-light);
   }
 }
 
@@ -414,7 +476,7 @@ html {
 .music-player-container h2 {
   margin: 0 0 10px 0;
   font-size: 18px;
-  color: var(--color-accent-gold);
+  color: var(--color-accent-light);
   text-shadow: 0 0 6px var(--color-glow-alt), 0 0 14px var(--color-glow-main);
   letter-spacing: 2px;
 }
@@ -485,23 +547,77 @@ html {
 .music-player-container #volume-slider {
   -webkit-appearance: none;
   appearance: none;
-  width: 160px;
-  height: 6px;
-  background: linear-gradient(90deg, var(--color-border-strong), var(--color-accent-gold));
-  border-radius: 3px;
-  outline: none;
+  width: 180px;
+  height: 8px;
   margin: 0 6px;
+  outline: none;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-border-strong), var(--color-accent-light));
   vertical-align: middle;
 }
-.music-player-container #volume-slider::-webkit-slider-thumb,
-.music-player-container #volume-slider::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  background: var(--color-accent-gold);
-  border: 2px solid var(--color-accent);
+
+.music-player-container #volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  cursor: pointer;
+  background: radial-gradient(circle at 35% 35%, var(--color-accent-light), var(--color-accent));
+  border: 2px solid var(--color-accent);
   box-shadow: 0 0 8px var(--color-glow-alt), 0 0 12px var(--color-glow-main);
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.music-player-container #volume-slider::-moz-range-track {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-border-strong), var(--color-accent-light));
+  border: 1px solid var(--color-border-strong);
+}
+
+.music-player-container #volume-slider::-moz-range-progress {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+}
+
+.music-player-container #volume-slider:focus-visible::-webkit-slider-thumb,
+.music-player-container #volume-slider:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 3px var(--focus-ring-outer), 0 0 10px var(--color-glow-main);
+}
+
+.music-player-container #volume-slider:hover::-webkit-slider-thumb,
+.music-player-container #volume-slider:hover::-moz-range-thumb {
+  transform: scale(1.06);
+}
+
+.music-player-container #volume-slider:active::-webkit-slider-thumb,
+.music-player-container #volume-slider:active::-moz-range-thumb {
+  transform: scale(0.98);
+}
+
+.music-player-container #volume-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--color-accent-light), var(--color-accent));
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 0 8px var(--color-glow-alt), 0 0 12px var(--color-glow-main);
+  cursor: pointer;
+}
+
+.music-player-container #volume-slider::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-border-strong), var(--color-accent-light));
+}
+
+.playlist,
+.scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) transparent;
 }
 
 .playlist {
@@ -534,7 +650,41 @@ html {
   background: linear-gradient(90deg, var(--color-accent-strong-bg), var(--color-glow-alt));
   color: var(--color-white);
   text-shadow: 0 0 5px var(--color-black);
-  border-left: 3px solid var(--color-accent-gold);
+  border-left: 3px solid var(--color-accent-light);
+}
+
+a:focus-visible,
+button:focus-visible,
+.nav a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.music-player-container #volume-slider:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (pointer: coarse) {
+  .music-player-container #volume-slider {
+    height: 12px;
+  }
+  .music-player-container #volume-slider::-webkit-slider-thumb,
+  .music-player-container #volume-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    margin-top: -7px; /* re-center on taller track */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #start-overlay {
+    animation: none;
+  }
+  .floating-icon {
+    animation: none;
+    opacity: 0.7;
+  }
 }
 
 /* =========================================
@@ -583,11 +733,11 @@ html {
 .char-block h3 {
   margin-bottom: 12px;
   font-size: var(--font-size-h3);
-  color: var(--color-accent-gold);
+  color: var(--color-accent-light);
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 0 0 5px var(--color-accent-soft), 0 0 10px var(--color-accent-alt),
-    0 0 15px var(--color-accent), 0 0 20px var(--color-accent-gold);
+    0 0 15px var(--color-accent), 0 0 20px var(--color-accent-light);
 }
 .char-block ul {
   list-style: none;
@@ -716,7 +866,7 @@ h1 {
   text-transform: uppercase;
   color: var(--color-text-main);
   text-shadow: 0 0 5px var(--color-accent-soft), 0 0 10px var(--color-accent-alt),
-    0 0 15px var(--color-accent), 0 0 20px var(--color-accent-gold);
+    0 0 15px var(--color-accent), 0 0 20px var(--color-accent-light);
   margin: 5px 0;
 }
 .quote {
@@ -732,7 +882,7 @@ h2 {
   padding-bottom: 5px;
   margin: 0 0 10px 0;
   text-shadow: 0 0 5px var(--color-accent-soft), 0 0 10px var(--color-accent-alt),
-    0 0 15px var(--color-accent), 0 0 20px var(--color-accent-gold);
+    0 0 15px var(--color-accent), 0 0 20px var(--color-accent-light);
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: bolder;
@@ -758,7 +908,7 @@ h2 {
 .section.interests {
   background: var(--color-section-bg);
   border: 2px solid var(--color-accent-alt);
-  border-left: 6px solid var(--color-accent-gold);
+  border-left: 6px solid var(--color-accent-light);
   border-radius: var(--section-radius);
   padding: 20px 25px;
   margin-top: 25px;
