@@ -236,7 +236,7 @@ html {
   font-family: var(--brand-font);
   font-weight: 700;
   letter-spacing: 0.05em;
-  font-size: var(--font-size-h1);
+  font-size: var(--font-size-h3);
   text-transform: uppercase;
   color: var(--color-text-main);
   text-shadow: 0 0 5px var(--color-accent-soft), 0 0 10px var(--color-accent-alt),
