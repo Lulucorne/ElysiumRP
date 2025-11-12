@@ -74,9 +74,9 @@ html {
   --overlay-3-url: url('https://lulucorne.github.io/ElysiumRP/assets/characters/UNUSED'); */
 
   /* Typography */
-  --font-body: 'Roung', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Roung', system-ui, sans-serif;
   --font-heading: 'Vaseline Extra', 'Roung', sans-serif;
-  --font-monospace: 'Courier New', monospace;
+  --font-monospace: 'Roung', system-ui, sans-serif;
 
   --font-size-base: 15px;
   --font-size-h1: 36px;

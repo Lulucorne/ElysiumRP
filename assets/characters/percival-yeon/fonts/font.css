@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Vaseline Extra';
-  src: url('assets/characters/percival-yeon/fonts/Vaseline-Extra.ttf') format('truetype');
+  src: url('./Vaseline-Extra.woff2') format('woff2'), url('./Vaseline-Extra.woff') format('woff'),
+    url('./Vaseline-Extra.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -8,7 +9,8 @@
 
 @font-face {
   font-family: 'Roung';
-  src: url('assets/characters/percival-yeon/fonts/roung.otf') format('opentype');
+  src: url('./roung.woff2') format('woff2'), url('./roung.woff') format('woff'),
+    url('./roung.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

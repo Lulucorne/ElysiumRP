@@ -1,6 +1,7 @@
-const BASE = document.body.dataset.base;
+const BASE = document.body.dataset.base || '';
 const MUSIC = `${BASE}/music`;
 const COVER = `${MUSIC}/cover`;
+
 const audio = document.getElementById('audio');
 const playlistContainer = document.getElementById('playlist');
 const coverArt = document.getElementById('cover-art');
@@ -45,7 +46,7 @@ const songs = [
 // Sort songs alphabetically
 songs.sort((a, b) => a.title.localeCompare(b.title));
 
-// Generate playlist
+// Build playlist
 songs.forEach((song, index) => {
   const div = document.createElement('div');
   div.classList.add('track');
@@ -56,46 +57,36 @@ songs.forEach((song, index) => {
   div.addEventListener('click', () => playTrack(index));
 });
 
-// Initialize volume
+// Init volume safely
 audio.volume = 0.1;
-volumeSlider.value = audio.volume;
+if (volumeSlider) volumeSlider.value = String(audio.volume);
 
-// Play a track
+// ====== CORE ======
 function playTrack(index) {
   currentIndex = index;
   const song = songs[index];
+
   const srcPath = song.src.replace(/^assets\/characters\/percival-yeon\//, '');
   const coverPath = song.cover.replace(/^assets\/characters\/percival-yeon\//, '');
+
   audio.src = `${BASE}/${srcPath}`;
   coverArt.src = `${BASE}/${coverPath}`;
   trackInfo.textContent = `✦ ${song.title} – ${song.artist} ✦`;
 
   document.querySelectorAll('.track').forEach((t) => t.classList.remove('active'));
-  document.querySelector(`.track[data-index="${index}"]`).classList.add('active');
+  const active = document.querySelector(`.track[data-index="${index}"]`);
+  if (active) active.classList.add('active');
 
-  audio.play().catch(() => console.log('Autoplay blocked.'));
+  audio.play().catch(() => {
+    updatePlayPauseBtn();
+  });
   updatePlayPauseBtn();
 }
 
-// Update play/pause button text
 function updatePlayPauseBtn() {
   playPauseBtn.textContent = audio.paused ? '▶' : '⏸';
 }
 
-// Play/pause button
-playPauseBtn.addEventListener('click', () => {
-  if (audio.paused) audio.play();
-  else audio.pause();
-  updatePlayPauseBtn();
-});
-
-// Shuffle button
-shuffleBtn.addEventListener('click', () => {
-  isShuffled = !isShuffled;
-  shuffleBtn.classList.toggle('active', isShuffled);
-});
-
-// Next track
 function nextTrack() {
   if (isShuffled) {
     let next;
@@ -108,23 +99,36 @@ function nextTrack() {
   }
 }
 
-// Previous track
 function prevTrack() {
   playTrack((currentIndex - 1 + songs.length) % songs.length);
 }
 
-// Audio ended
-audio.addEventListener('ended', nextTrack);
+// ====== UI EVENTS ======
 
-// Keyboard / custom buttons
+// Play/pause
+playPauseBtn.addEventListener('click', () => {
+  if (audio.paused) audio.play();
+  else audio.pause();
+  updatePlayPauseBtn();
+});
+
+// Shuffle
+shuffleBtn.addEventListener('click', () => {
+  isShuffled = !isShuffled;
+  shuffleBtn.classList.toggle('active', isShuffled);
+});
+
+// Next/Prev buttons injected next to playPause
 const controlsContainer = document.createElement('div');
 controlsContainer.style.display = 'flex';
 controlsContainer.style.justifyContent = 'center';
 controlsContainer.style.marginTop = '5px';
+
 const prevBtn = document.createElement('button');
 prevBtn.textContent = '⏮';
 prevBtn.style.marginRight = '5px';
 prevBtn.addEventListener('click', prevTrack);
+
 const nextBtn = document.createElement('button');
 nextBtn.textContent = '⏭';
 nextBtn.style.marginLeft = '5px';
@@ -133,33 +137,46 @@ nextBtn.addEventListener('click', nextTrack);
 playPauseBtn.parentNode.insertBefore(prevBtn, playPauseBtn);
 playPauseBtn.parentNode.insertBefore(nextBtn, playPauseBtn.nextSibling);
 
-// Update timestamp
+// Time display
 audio.addEventListener('timeupdate', () => {
-  const formatTime = (t) => Math.floor(t / 60) + ':' + String(Math.floor(t % 60)).padStart(2, '0');
-  timeStamp.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration || 0)}`;
+  const fmt = (t) => Math.floor(t / 60) + ':' + String(Math.floor(t % 60)).padStart(2, '0');
+  timeStamp.textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration || 0)}`;
 });
 
-// Attempt autoplay on page load
-window.addEventListener('DOMContentLoaded', () => {
-  playTrack(0); // Try to play first track automatically
+// Reset displayed duration when metadata loads
+audio.addEventListener('loadedmetadata', () => {
+  const fmt = (t) => Math.floor(t / 60) + ':' + String(Math.floor(t % 60)).padStart(2, '0');
+  timeStamp.textContent = `0:00 / ${fmt(audio.duration || 0)}`;
 });
 
-const overlay = document.getElementById('start-overlay');
-overlay.addEventListener('click', () => {
-  playTrack(0); // start first track
-  overlay.style.display = 'none'; // hide overlay
-});
-
-// Optional: update mute button if volume slider goes to 0
+// Volume slider
 volumeSlider.addEventListener('input', () => {
-  audio.volume = volumeSlider.value;
+  const v = parseFloat(volumeSlider.value);
+  audio.volume = Number.isFinite(v) ? v : 0.1;
+
   if (audio.volume === 0) {
     audio.muted = true;
     muteBtn.textContent = '🕨';
     muteBtn.classList.add('muted');
-  } else if (audio.muted) {
+  } else {
     audio.muted = false;
     muteBtn.textContent = '🕪';
     muteBtn.classList.remove('muted');
   }
+});
+
+// Mute button
+muteBtn.addEventListener('click', () => {
+  audio.muted = !audio.muted;
+  muteBtn.textContent = audio.muted ? '🕨' : '🕪';
+  muteBtn.classList.toggle('muted', audio.muted);
+  if (!audio.muted && parseFloat(volumeSlider.value) === 0) {
+    audio.volume = 0.1;
+    volumeSlider.value = '0.1';
+  }
+});
+
+// ====== BOOT ======
+window.addEventListener('DOMContentLoaded', () => {
+  playTrack(0);
 });
