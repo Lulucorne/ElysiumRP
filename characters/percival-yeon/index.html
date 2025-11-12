@@ -16,7 +16,7 @@
     />
 
     <!-- Optional per-character font file -->
-    <link rel="stylesheet" href="/ElysiumRP/assets/characters/percival-yeon/font/font.css" />
+    <link rel="stylesheet" href="/ElysiumRP/assets/characters/percival-yeon/fonts/font.css" />
 
     <!-- Main character styles -->
     <link rel="stylesheet" href="/ElysiumRP/assets/characters/percival-yeon/styles.css" />
@@ -47,31 +47,17 @@
          BACKGROUND & OVERLAYS
          ========================== -->
   <header class="site-header">
-    <a class="brand" href="{{ '/' | relative_url }}">
-      <img class="brand-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Logo" />
-      <span class="brand-name">{{ site.title }}</span>
+    <a class="brand" href="https://lulucorne.github.io/ElysiumRP">
+      <img class="brand-logo" src="/ElysiumRP/assets/logo.png" alt="Logo" />
+      <span class="brand-name">Elysium Roleplay</span>
     </a>
 
     <nav class="nav">
-      <a href="{{ '/' | relative_url }}"
-         class="{% if page.url == '/' %}active{% endif %}"
-         {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
-
-      <a href="{{ '/characters/' | relative_url }}"
-         class="{% if page.url contains '/characters/' %}active{% endif %}"
-         {% if page.url contains '/characters/' %}aria-current="page"{% endif %}>Characters</a>
-
-      <a href="{{ '/rules/' | relative_url }}"
-         class="{% if page.url contains '/rules/' %}active{% endif %}"
-         {% if page.url contains '/rules/' %}aria-current="page"{% endif %}>Rules</a>
-
-      <a href="{{ '/lore/' | relative_url }}"
-         class="{% if page.url contains '/lore/' %}active{% endif %}"
-         {% if page.url contains '/lore/' %}aria-current="page"{% endif %}>Lore</a>
-
-      <a href="{{ '/apply/' | relative_url }}"
-         class="{% if page.url contains '/apply/' %}active{% endif %}"
-         {% if page.url contains '/apply/' %}aria-current="page"{% endif %}>Apply</a>
+      <a href="https://lulucorne.github.io/ElysiumRP">Home</a>
+      <a href="https://lulucorne.github.io/ElysiumRP/characters">Characters</a>
+      <a href="https://lulucorne.github.io/ElysiumRP/rules">Rules</a>
+      <a href="https://lulucorne.github.io/ElysiumRP/lore">Lore</a>
+      <a href="https://lulucorne.github.io/ElysiumRP/apply">Apply</a>
     </nav>
   </header>
   <main class="page">
